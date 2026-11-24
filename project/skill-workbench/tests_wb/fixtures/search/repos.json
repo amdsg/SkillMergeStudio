@@ -1,0 +1,41 @@
+[
+  {
+    "full_name": "fixture/skill-alpha",
+    "description": "Fixture skill alpha for offline evidence",
+    "stars": 120,
+    "pushed_at": "2026-11-20T10:00:00Z",
+    "release_tag": "v1.0.0",
+    "release_download": "fixture-alpha.zip",
+    "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "topics": ["agent-skill", "fixture"],
+    "fetched_at": "2026-11-23T09:00:00Z",
+    "factors": {"stars": 120, "has_release": true},
+    "missing_factors": []
+  },
+  {
+    "full_name": "fixture/skill-beta",
+    "description": "Fixture skill beta for offline evidence",
+    "stars": 80,
+    "pushed_at": "2026-11-18T10:00:00Z",
+    "release_tag": "",
+    "release_download": "",
+    "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "topics": ["agent-skill", "fixture"],
+    "fetched_at": "2026-11-23T09:00:00Z",
+    "factors": {"stars": 80, "has_release": false},
+    "missing_factors": ["release_tag"]
+  },
+  {
+    "full_name": "fixture/skill-gamma",
+    "description": "Fixture skill gamma for offline evidence",
+    "stars": 30,
+    "pushed_at": "2026-11-10T10:00:00Z",
+    "release_tag": "v0.9.0",
+    "release_download": "fixture-gamma.zip",
+    "commit_sha": "cccccccccccccccccccccccccccccccccccccccc",
+    "topics": ["fixture"],
+    "fetched_at": "2026-11-23T09:00:00Z",
+    "factors": {"stars": 30, "has_release": true},
+    "missing_factors": []
+  }
+]

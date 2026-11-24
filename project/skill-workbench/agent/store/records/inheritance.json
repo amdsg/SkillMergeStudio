@@ -1,0 +1,9 @@
+{
+  "source_id": "skill-hub-plugin",
+  "declared_count": 189,
+  "path": ".codeartsdoer/specs/skill-hub-plugin/spec.md",
+  "state": "blocked",
+  "reason_code": "inheritance_source_missing",
+  "checked_at": "2026-11-23",
+  "digest": null
+}

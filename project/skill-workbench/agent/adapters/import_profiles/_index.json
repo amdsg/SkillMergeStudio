@@ -1,0 +1,9 @@
+{
+  "registry_version": 1,
+  "profiles": [
+    {"profile_id": "generic_markdown", "file": "generic_markdown.json"},
+    {"profile_id": "gpt", "file": "gpt.json"},
+    {"profile_id": "deepseek", "file": "deepseek.json"},
+    {"profile_id": "doubao", "file": "doubao.json"}
+  ]
+}

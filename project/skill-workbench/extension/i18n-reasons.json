@@ -1,0 +1,18 @@
+{
+  "reasons": {
+    "not_fetched": "wb.reason.not_fetched",
+    "not_declared": "wb.reason.not_declared",
+    "declared_universal": "wb.reason.declared_universal",
+    "declared_targets": "wb.reason.declared_targets",
+    "field_unregistered": "wb.reason.field_unregistered",
+    "invalid_value": "wb.reason.invalid_value",
+    "parse_failed": "wb.reason.parse_failed",
+    "legacy_missing": "wb.reason.legacy_missing",
+    "target_not_registered": "wb.reason.target_not_registered",
+    "matched_detected": "wb.reason.matched_detected",
+    "no_tool_hint": "wb.reason.no_tool_hint",
+    "no_detected_tool": "wb.reason.no_detected_tool",
+    "tool_evidence_unknown": "wb.reason.tool_evidence_unknown",
+    "cannot_compare": "wb.reason.cannot_compare"
+  }
+}

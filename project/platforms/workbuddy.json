@@ -1,0 +1,76 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": null,
+  "description": null,
+  "evidence_level": "candidate_rules",
+  "frontmatter": null,
+  "group": "企业协作",
+  "id": "workbuddy",
+  "install": null,
+  "kind": "skill",
+  "label": "WorkBuddy",
+  "last_verified_at": null,
+  "legacy_limits": {
+    "bundle": {
+      "max_file_mb": 3,
+      "max_files": 200,
+      "max_mb": 3
+    },
+    "description": {
+      "max_chars": 2000,
+      "style": "中英双语描述"
+    },
+    "frontmatter": {
+      "defaults": {
+        "author": "unknown",
+        "version": "1.0.0"
+      },
+      "required": [
+        "name",
+        "description",
+        "description_zh",
+        "description_en",
+        "version",
+        "author"
+      ]
+    },
+    "install": {
+      "global": "",
+      "project": ""
+    },
+    "name": {
+      "forbidden_parts": [],
+      "max_length": 64,
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "package": {
+      "skill_md_path": "skills/<name>/SKILL.md",
+      "type": "zip",
+      "wrap": true
+    },
+    "skill_md": {
+      "max_bytes": 3145728,
+      "max_lines": 5000
+    }
+  },
+  "name": null,
+  "notes": "未找到可公开核验的官方规则；按项目需求执行：zip≤3MB、结构 skills/<name>/SKILL.md、frontmatter 必填 description_zh/description_en/version/author。导出会标 V-RULE-02 未核验告警。；v1 兼容读取：无官方来源，未升级（2026-11-21）。",
+  "origin": "baseline",
+  "package": null,
+  "rule_schema_version": 2,
+  "skill_md": null,
+  "source": null,
+  "source_type": "official_docs",
+  "unknown_fields": [
+    "bundle",
+    "description",
+    "frontmatter",
+    "install",
+    "name",
+    "package",
+    "skill_md"
+  ],
+  "verification_status": "unknown",
+  "verified_at": null
+}

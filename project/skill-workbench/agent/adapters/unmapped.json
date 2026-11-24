@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "engine_id": "codebuddy",
+      "state": "not_exposed",
+      "reason": "engine_entry_not_in_target_registry",
+      "note": "须先按 7 步接入流程显式登记与核验，禁止自动纳入。",
+      "recorded_at": "2026-11-23"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "profile_id": "gpt",
+  "version": 1,
+  "evidence_level": "unknown",
+  "source_type": "structural",
+  "signatures": ["^##\\s+Role\\s*$", "^##\\s+Instructions\\s*$"],
+  "section_keywords": {
+    "capabilities": ["Capabilities", "Skills"],
+    "instructions": ["Instructions", "Steps"]
+  },
+  "field_map": {
+    "h1": "identity.name",
+    "role_section": "intent.summary",
+    "instructions_section": "instructions"
+  },
+  "unknown_fields": ["native_targets", "capability_tags", "dependencies", "version"],
+  "note": "Only structural headings are used; rules are not verified."
+}

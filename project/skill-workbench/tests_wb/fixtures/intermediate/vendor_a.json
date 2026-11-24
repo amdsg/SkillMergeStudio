@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "identity": {"name": "vendor-a skill", "id": "vendor-a", "version": "1.0.0", "tags": ["variant-a"]},
+  "intent": {"summary": "Vendor A shaped skill, mapped through the neutral layer.", "source_kind": "skill_md"},
+  "capabilities": [
+    {"trigger": "when a structured input arrives", "inputs": ["text"], "outputs": ["report"], "constraints": []}
+  ],
+  "instructions": [
+    {"step": 1, "text": "Read the input."},
+    {"step": 2, "text": "Write the report."}
+  ],
+  "examples": [],
+  "resources": [],
+  "provenance": {
+    "source": "fixture://vendor-a",
+    "native_targets": ["unknown"],
+    "import_id": "imp-a",
+    "mapping_report_ref": "map-a"
+  }
+}

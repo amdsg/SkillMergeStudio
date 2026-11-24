@@ -1,0 +1,1314 @@
+{
+  "generated_at": "2026-11-22",
+  "candidates": [
+    {
+      "key": "aider-conventions",
+      "label": "Aider",
+      "url": "https://aider.chat/docs/usage/conventions.html",
+      "final_url": "https://aider.chat/docs/usage/conventions.html",
+      "status": 200,
+      "error": "",
+      "title": "Specifying coding conventions | aider",
+      "bytes_read": 32512,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "amazon-q-context",
+      "label": "Amazon Q",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/context.html",
+      "final_url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/",
+      "status": 200,
+      "error": "",
+      "title": "Amazon Q Developer",
+      "bytes_read": 2237,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "amp-manual",
+      "label": "Amp",
+      "url": "https://ampcode.com/manual",
+      "final_url": "https://ampcode.com/docs",
+      "status": 200,
+      "error": "",
+      "title": "Introduction | Amp Docs",
+      "bytes_read": 112900,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "antigravity",
+      "label": "Antigravity",
+      "url": "https://antigravity.google/docs",
+      "final_url": "https://antigravity.google/docs",
+      "status": 200,
+      "error": "",
+      "title": "Redirecting to: /docs/getting-started",
+      "bytes_read": 4052,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "autogen",
+      "label": "AutoGen",
+      "url": "https://microsoft.github.io/autogen/stable/",
+      "final_url": "https://microsoft.github.io/autogen/stable/",
+      "status": 200,
+      "error": "",
+      "title": "AutoGen &#8212; AutoGen",
+      "bytes_read": 28091,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "crush",
+      "label": "Charm Crush",
+      "url": "https://github.com/charmbracelet/crush",
+      "final_url": "https://github.com/charmbracelet/crush",
+      "status": 200,
+      "error": "",
+      "title": "GitHub - charmbracelet/crush: Glamourous agentic coding for all 💘 · GitHub",
+      "bytes_read": 579286,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "claude-skills",
+      "label": "Claude",
+      "url": "https://code.claude.com/docs/en/skills",
+      "final_url": "https://code.claude.com/docs/en/skills",
+      "status": 200,
+      "error": "",
+      "title": "Extend Claude with skills - Claude Code Docs",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "claude-agent-sdk",
+      "label": "Claude Agent SDK",
+      "url": "https://docs.claude.com/en/api/agent-sdk/overview",
+      "final_url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "status": 200,
+      "error": "",
+      "title": "Agent SDK overview - Claude Code Docs",
+      "bytes_read": 235598,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "cline-rules",
+      "label": "Cline",
+      "url": "https://docs.cline.bot/customization/cline-rules",
+      "final_url": "https://docs.cline.bot/customization/cline-rules",
+      "status": 200,
+      "error": "",
+      "title": "Rules - Cline",
+      "bytes_read": 291488,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "codebuddy",
+      "label": "CodeBuddy",
+      "url": "https://codebuddy.ai/docs",
+      "final_url": "https://www.codebuddy.ai:443/docs/",
+      "status": 200,
+      "error": "",
+      "title": "Tencent Cloud Code Assistant CodeBuddy – AI Code Editor",
+      "bytes_read": 3910,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "continue-rules",
+      "label": "Continue",
+      "url": "https://docs.continue.dev/customize/rules",
+      "final_url": "https://docs.continue.dev/customize/rules",
+      "status": 200,
+      "error": "",
+      "title": "Rules | Continue Docs",
+      "bytes_read": 44897,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "coze-docs",
+      "label": "Coze",
+      "url": "https://www.coze.com/open/docs/guides",
+      "final_url": "https://www.coze.com/open/docs/guides",
+      "status": 200,
+      "error": "",
+      "title": "Coze-AI Agent Intelligent Office Platform-Coze Redefines Productivity and Efficiency with AI",
+      "bytes_read": 43754,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "crewai-skills",
+      "label": "CrewAI",
+      "url": "https://docs.crewai.com/concepts/skills",
+      "final_url": "https://docs.crewai.com/v1.15.44/en/concepts/skills",
+      "status": 200,
+      "error": "",
+      "title": "Skills - CrewAI",
+      "bytes_read": 522825,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "devin-desktop",
+      "label": "Devin Desktop",
+      "url": "https://docs.devin.ai/desktop/devin-local/customizations",
+      "final_url": "https://docs.devin.ai/desktop/devin-local/customizations",
+      "status": 200,
+      "error": "",
+      "title": "Devin Local Customizations",
+      "bytes_read": 516013,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "dify-docs",
+      "label": "Dify",
+      "url": "https://docs.dify.ai/",
+      "final_url": "https://docs.dify.ai/en/home",
+      "status": 200,
+      "error": "",
+      "title": "Dify Documentation - Dify Docs",
+      "bytes_read": 147038,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "dingtalk",
+      "label": "DingTalk",
+      "url": "https://www.dingtalk.com/",
+      "final_url": "https://www.dingtalk.com/",
+      "status": 200,
+      "error": "",
+      "title": "钉钉，AI时代工作方式",
+      "bytes_read": 49230,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "doubao",
+      "label": "Doubao",
+      "url": "https://www.doubao.com/",
+      "final_url": "https://www.doubao.com/chat/",
+      "status": 200,
+      "error": "",
+      "title": "豆包 - 字节跳动旗下 AI 智能助手",
+      "bytes_read": 380621,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "factory-skills",
+      "label": "Factory",
+      "url": "https://docs.factory.ai/cli/configuration/skills",
+      "final_url": "https://docs.factory.com/harness/skills",
+      "status": 200,
+      "error": "",
+      "title": "Skills",
+      "bytes_read": 355237,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "flowise",
+      "label": "Flowise",
+      "url": "https://docs.flowiseai.com/",
+      "final_url": "https://docs.flowiseai.com/",
+      "status": 200,
+      "error": "",
+      "title": "Introduction | FlowiseAI",
+      "bytes_read": 553284,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "gemini-cli-skills",
+      "label": "Gemini CLI",
+      "url": "https://geminicli.com/docs/cli/skills/",
+      "final_url": "https://geminicli.com/docs/cli/skills/",
+      "status": 200,
+      "error": "",
+      "title": "Agent Skills | Gemini CLI",
+      "bytes_read": 114148,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "github-copilot-skills",
+      "label": "GitHub Copilot",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills",
+      "final_url": "https://docs.github.com/en/copilot/concepts/customizations/agent-skills",
+      "status": 200,
+      "error": "",
+      "title": "Agent skills - GitHub Docs",
+      "bytes_read": 589817,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "github-copilot-instructions",
+      "label": "GitHub Copilot",
+      "url": "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions",
+      "final_url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions",
+      "status": 200,
+      "error": "",
+      "title": "Adding repository custom instructions for GitHub Copilot - GitHub Docs",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "gitlab-duo",
+      "label": "GitLab Duo",
+      "url": "https://docs.gitlab.com/ee/user/gitlab_duo/",
+      "final_url": "https://docs.gitlab.com/user/gitlab_duo/",
+      "status": 200,
+      "error": "",
+      "title": "GitLab Duo | GitLab Docs",
+      "bytes_read": 23675,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "google-adk",
+      "label": "Google ADK",
+      "url": "https://google.github.io/adk-docs/",
+      "final_url": "https://adk.dev/",
+      "status": 200,
+      "error": "",
+      "title": "Agent Development Kit (ADK) - Agent Development Kit (ADK)",
+      "bytes_read": 130818,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "haystack-agents",
+      "label": "Haystack",
+      "url": "https://docs.haystack.deepset.ai/docs/agents",
+      "final_url": "https://docs.haystack.deepset.ai/docs/agents",
+      "status": 200,
+      "error": "",
+      "title": "Agents | Haystack Documentation",
+      "bytes_read": 49952,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": true,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "iflow",
+      "label": "iFlow",
+      "url": "https://iflow.cn/",
+      "final_url": "https://iflow.cn/",
+      "status": 200,
+      "error": "",
+      "title": "心流AI助手 | 让知识随心流动",
+      "bytes_read": 91757,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "kimi-cli",
+      "label": "Kimi CLI",
+      "url": "https://github.com/MoonshotAI/kimi-cli",
+      "final_url": "https://github.com/MoonshotAI/kimi-cli",
+      "status": 200,
+      "error": "",
+      "title": "GitHub - MoonshotAI/kimi-cli: [Archived] Legacy Python Kimi CLI, no longer maintained. Please use Kimi Code CLI: https:/",
+      "bytes_read": 334711,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "kiro-skills",
+      "label": "Kiro",
+      "url": "https://kiro.dev/docs/skills/",
+      "final_url": "https://kiro.dev/docs/skills/",
+      "status": 200,
+      "error": "",
+      "title": "Agent Skills - Features - Docs - Kiro",
+      "bytes_read": 328946,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "kiro-steering",
+      "label": "Kiro",
+      "url": "https://kiro.dev/docs/steering/",
+      "final_url": "https://kiro.dev/docs/steering/",
+      "status": 200,
+      "error": "",
+      "title": "Steering - Features - Docs - Kiro",
+      "bytes_read": 338815,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "langflow",
+      "label": "Langflow",
+      "url": "https://docs.langflow.org/",
+      "final_url": "https://docs.langflow.org/",
+      "status": 200,
+      "error": "",
+      "title": "What is Langflow? | Langflow Documentation",
+      "bytes_read": 45777,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "llamaindex-agents",
+      "label": "LlamaIndex",
+      "url": "https://docs.llamaindex.ai/en/stable/use_cases/agents/",
+      "final_url": "https://developers.llamaindex.ai/python/framework/use_cases/agents/",
+      "status": 200,
+      "error": "",
+      "title": "Agents | Developer Documentation",
+      "bytes_read": 292340,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "manus",
+      "label": "Manus",
+      "url": "https://manus.im/",
+      "final_url": "https://manus.im/",
+      "status": 200,
+      "error": "",
+      "title": "Manus: Hands On AI",
+      "bytes_read": 187951,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "copilot-studio",
+      "label": "Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+      "final_url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+      "status": 200,
+      "error": "",
+      "title": "Official Microsoft Copilot Studio documentation - Microsoft Copilot Studio | Microsoft Learn",
+      "bytes_read": 67425,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "n8n-docs",
+      "label": "n8n",
+      "url": "https://docs.n8n.io/",
+      "final_url": "https://docs.n8n.io/",
+      "status": 200,
+      "error": "",
+      "title": "n8n Docs",
+      "bytes_read": 485549,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "open-interpreter",
+      "label": "Open Interpreter",
+      "url": "https://docs.openinterpreter.com/",
+      "final_url": "https://www.openinterpreter.com/docs/terminal",
+      "status": 200,
+      "error": "",
+      "title": "Open Interpreter | Coding agent for open models",
+      "bytes_read": 132558,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "openai-agents-sdk",
+      "label": "OpenAI Agents SDK",
+      "url": "https://openai.github.io/openai-agents-python/",
+      "final_url": "https://openai.github.io/openai-agents-python/",
+      "status": 200,
+      "error": "",
+      "title": "OpenAI Agents SDK",
+      "bytes_read": 76561,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "opencode-skills",
+      "label": "OpenCode",
+      "url": "https://opencode.ai/docs/skills/",
+      "final_url": "https://opencode.ai/docs/skills/",
+      "status": 200,
+      "error": "",
+      "title": "Skills | OpenCode",
+      "bytes_read": 75351,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "openhands-microagents",
+      "label": "OpenHands",
+      "url": "https://docs.all-hands.dev/usage/prompting/microagents-overview",
+      "final_url": "https://docs.openhands.dev/overview/skills",
+      "status": 200,
+      "error": "",
+      "title": "Skills Overview - OpenHands Docs",
+      "bytes_read": 206965,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "qoder-rules",
+      "label": "Qoder",
+      "url": "https://docs.qoder.com/user-guide/rules",
+      "final_url": "https://docs.qoder.com/user-guide/rules",
+      "status": 200,
+      "error": "",
+      "title": "Rules - Qoder",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "qwen-code-docs",
+      "label": "Qwen Code",
+      "url": "https://qwenlm.github.io/qwen-code-docs/",
+      "final_url": "https://qwenlm.github.io/qwen-code-docs/",
+      "status": 200,
+      "error": "",
+      "title": "Qwen Code: AI Coding Agent Documentation",
+      "bytes_read": 15661,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "qwen-code-skills",
+      "label": "Qwen Code",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+      "final_url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+      "status": 200,
+      "error": "",
+      "title": "Agent Skills | Qwen Code Docs",
+      "bytes_read": 633537,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "roo-instructions",
+      "label": "Roo",
+      "url": "https://roocodeinc.github.io/Roo-Code/features/custom-instructions/",
+      "final_url": "https://roocodeinc.github.io/Roo-Code/features/custom-instructions/",
+      "status": 200,
+      "error": "",
+      "title": "Custom Instructions | Roo Code Documentation",
+      "bytes_read": 71568,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "semantic-kernel",
+      "label": "Semantic Kernel",
+      "url": "https://learn.microsoft.com/en-us/semantic-kernel/",
+      "final_url": "https://learn.microsoft.com/en-us/semantic-kernel/",
+      "status": 200,
+      "error": "",
+      "title": "Semantic Kernel documentation | Microsoft Learn",
+      "bytes_read": 26593,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "skills-sh",
+      "label": "Skills.sh",
+      "url": "https://skills.sh/",
+      "final_url": "https://www.skills.sh/",
+      "status": 200,
+      "error": "",
+      "title": "The Agent Skills Directory",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "trae-skills",
+      "label": "Trae",
+      "url": "https://docs.trae.ai/ide/skills",
+      "final_url": "https://docs.trae.ai/ide/skills",
+      "status": 200,
+      "error": "",
+      "title": "Skills - Documentation - TRAE",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "vercel-ai-sdk",
+      "label": "Vercel AI SDK",
+      "url": "https://ai-sdk.dev/docs/introduction",
+      "final_url": "https://ai-sdk.dev/docs/introduction",
+      "status": 200,
+      "error": "",
+      "title": "AI SDK by Vercel | AI SDK",
+      "bytes_read": 700000,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "vscode-copilot-skills",
+      "label": "VS Code Copilot",
+      "url": "https://code.visualstudio.com/docs/agent-customization/agent-skills",
+      "final_url": "https://code.visualstudio.com/docs/agent-customization/agent-skills",
+      "status": 200,
+      "error": "",
+      "title": "Use Agent Skills in VS Code",
+      "bytes_read": 178841,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": true,
+        "rules_word": true
+      }
+    },
+    {
+      "key": "workbuddy",
+      "label": "WorkBuddy",
+      "url": "https://www.workbuddy.ai/",
+      "final_url": "https://www.workbuddy.ai/",
+      "status": 200,
+      "error": "",
+      "title": "WorkBuddy - AI Agent for Everyday Office Work",
+      "bytes_read": 18158,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "zed-skills",
+      "label": "Zed",
+      "url": "https://zed.dev/docs/ai/skills",
+      "final_url": "https://zed.dev/docs/ai/skills",
+      "status": 200,
+      "error": "",
+      "title": "Skills | Agent Skills - Zed",
+      "bytes_read": 55586,
+      "markers": {
+        "skill_md": true,
+        "agent_skills": true,
+        "skills_word": true,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "agentskills-spec",
+      "label": "Agent Skills",
+      "url": "https://agentskills.io/specification",
+      "final_url": "https://agentskills.io/specification",
+      "status": null,
+      "error": "URLError: <urlopen error timed out>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "amp-skills",
+      "label": "Amp",
+      "url": "https://ampcode.com/news/skills",
+      "final_url": "https://ampcode.com/news/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "augment-skills",
+      "label": "Augment Code",
+      "url": "https://docs.augmentcode.com/context-services/skills",
+      "final_url": "https://docs.augmentcode.com/context-services/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "chatgpt-skills",
+      "label": "ChatGPT",
+      "url": "https://help.openai.com/en/articles/12512176-what-are-skills",
+      "final_url": "https://help.openai.com/en/articles/12512176-what-are-skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "codex-docs",
+      "label": "Codex",
+      "url": "https://developers.openai.com/codex/",
+      "final_url": "https://developers.openai.com/codex/",
+      "status": 403,
+      "error": "HTTP 403",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "codex-skills",
+      "label": "Codex",
+      "url": "https://developers.openai.com/codex/skills",
+      "final_url": "https://developers.openai.com/codex/skills",
+      "status": 403,
+      "error": "HTTP 403",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "continue-skills",
+      "label": "Continue",
+      "url": "https://docs.continue.dev/customize/skills",
+      "final_url": "https://docs.continue.dev/customize/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "continue-hub",
+      "label": "Continue Hub",
+      "url": "https://hub.continue.dev/",
+      "final_url": "https://hub.continue.dev/",
+      "status": null,
+      "error": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "cursor-skills",
+      "label": "Cursor",
+      "url": "https://cursor.com/docs/agent/skills",
+      "final_url": "https://cursor.com/docs/agent/skills",
+      "status": null,
+      "error": "URLError: <urlopen error timed out>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "cursor-rules",
+      "label": "Cursor",
+      "url": "https://cursor.com/docs/context/rules",
+      "final_url": "https://cursor.com/docs/context/rules",
+      "status": null,
+      "error": "URLError: <urlopen error timed out>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "cursor-directory",
+      "label": "Cursor Directory",
+      "url": "https://cursor.directory/",
+      "final_url": "https://cursor.directory/",
+      "status": 429,
+      "error": "HTTP 429",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "devin-skills",
+      "label": "Devin",
+      "url": "https://docs.devin.ai/essential-guidelines/skills",
+      "final_url": "https://docs.devin.ai/essential-guidelines/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "genspark",
+      "label": "Genspark",
+      "url": "https://www.genspark.ai/",
+      "final_url": "https://www.genspark.ai/",
+      "status": 403,
+      "error": "HTTP 403",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "goose-skills",
+      "label": "Goose",
+      "url": "https://block.github.io/goose/docs/guides/context-engineering/using-skills/",
+      "final_url": "https://block.github.io/goose/docs/guides/context-engineering/using-skills/",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "goose-recipes",
+      "label": "Goose",
+      "url": "https://block.github.io/goose/docs/guides/recipes/",
+      "final_url": "https://block.github.io/goose/docs/guides/recipes/",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "junie-guidelines",
+      "label": "JetBrains Junie",
+      "url": "https://www.jetbrains.com/help/junie/customize-guidelines.html",
+      "final_url": "https://junie.jetbrains.com/docs/",
+      "status": 403,
+      "error": "HTTP 403",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "langchain-skills",
+      "label": "LangChain",
+      "url": "https://docs.langchain.com/oss/python/langchain/skills",
+      "final_url": "https://docs.langchain.com/oss/python/langchain/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "mcp",
+      "label": "MCP",
+      "url": "https://modelcontextprotocol.io/",
+      "final_url": "https://modelcontextprotocol.io/",
+      "status": null,
+      "error": "URLError: <urlopen error timed out>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "mistral-docs",
+      "label": "Mistral",
+      "url": "https://docs.mistral.ai/",
+      "final_url": "https://docs.mistral.ai/",
+      "status": null,
+      "error": "URLError: <urlopen error timed out>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "openhands-skills",
+      "label": "OpenHands",
+      "url": "https://docs.all-hands.dev/usage/agents/skills",
+      "final_url": "https://docs.openhands.dev/openhands/usage/agents/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "plandex",
+      "label": "Plandex",
+      "url": "https://docs.plandex.ai/",
+      "final_url": "https://docs.plandex.ai/",
+      "status": null,
+      "error": "URLError: <urlopen error [Errno 11002] getaddrinfo failed>",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "replit-skills",
+      "label": "Replit",
+      "url": "https://docs.replit.com/replitai/agent-skills",
+      "final_url": "https://docs.replit.com/replitai/agent-skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "smithery",
+      "label": "Smithery",
+      "url": "https://smithery.ai/docs",
+      "final_url": "https://www.smithery.ai/docs",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "sourcegraph-cody",
+      "label": "Sourcegraph Cody",
+      "url": "https://sourcegraph.com/docs/cody/capabilities/context",
+      "final_url": "https://sourcegraph.com/docs/cody/capabilities/context",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "tabnine-docs",
+      "label": "Tabnine",
+      "url": "https://docs.tabnine.com/main/getting-started/quick-start",
+      "final_url": "https://docs.tabnine.com/main/getting-started/quick-start",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "warp-rules",
+      "label": "Warp",
+      "url": "https://docs.warp.dev/agent-platform/capabilities/rules",
+      "final_url": "https://docs.warp.dev/agent-platform/capabilities/rules",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "warp-skills",
+      "label": "Warp",
+      "url": "https://docs.warp.dev/agent-platform/capabilities/skills",
+      "final_url": "https://docs.warp.dev/agent-platform/capabilities/skills",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    },
+    {
+      "key": "zed-rules",
+      "label": "Zed",
+      "url": "https://zed.dev/docs/ai/rules",
+      "final_url": "https://zed.dev/docs/ai/rules",
+      "status": 404,
+      "error": "HTTP 404",
+      "title": "",
+      "bytes_read": 0,
+      "markers": {
+        "skill_md": false,
+        "agent_skills": false,
+        "skills_word": false,
+        "agents_md": false,
+        "rules_word": false
+      }
+    }
+  ]
+}

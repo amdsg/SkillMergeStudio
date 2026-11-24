@@ -1,0 +1,9 @@
+{
+  "policy_version": 1,
+  "claim_patterns": ["官方兼容", "已适配", "official compatible"],
+  "degradations": {
+    "images": "images are exported as text references",
+    "tool_calls": "tool calls are exported as descriptive steps",
+    "streaming": "streaming is documented, not enforced"
+  }
+}

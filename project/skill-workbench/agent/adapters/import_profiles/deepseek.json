@@ -1,0 +1,19 @@
+{
+  "profile_id": "deepseek",
+  "version": 1,
+  "evidence_level": "unknown",
+  "source_type": "structural",
+  "signatures": ["^##\\s+角色\\s*$", "^##\\s+能力\\s*$"],
+  "section_keywords": {
+    "capabilities": ["Capabilities", "Skills", "能力", "技能"],
+    "instructions": ["Instructions", "Steps", "步骤", "流程"]
+  },
+  "field_map": {
+    "h1": "identity.name",
+    "role_section": "intent.summary",
+    "capabilities_section": "capabilities",
+    "instructions_section": "instructions"
+  },
+  "unknown_fields": ["native_targets", "capability_tags", "dependencies", "version"],
+  "note": "Structural sections only; target-specific limits are not verified."
+}

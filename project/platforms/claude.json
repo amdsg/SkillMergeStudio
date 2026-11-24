@@ -1,0 +1,58 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": {
+    "max_file_mb": 10,
+    "max_files": 200,
+    "max_mb": 30
+  },
+  "description": {
+    "max_chars": 200,
+    "style": "单句、动作导向，先写用途再写触发场景"
+  },
+  "evidence_level": "verified",
+  "frontmatter": {
+    "defaults": {
+      "version": "1.0.0"
+    },
+    "required": [
+      "name",
+      "description"
+    ]
+  },
+  "group": "Claude 生态",
+  "id": "claude",
+  "install": {
+    "global": "~/.claude/skills",
+    "project": "./.claude/skills"
+  },
+  "kind": "skill",
+  "label": "Claude",
+  "last_verified_at": "2026-11-22",
+  "legacy_limits": null,
+  "name": {
+    "forbidden_parts": [
+      "claude",
+      "anthropic"
+    ],
+    "max_length": 64,
+    "pattern": "^[a-z0-9-]+$"
+  },
+  "notes": "官网核验了个人/项目目录与 SKILL.md frontmatter；本项目按需求额外限制 description≤200 字符、名称禁 claude/anthropic、zip≤30MB、解压顶层目录=技能名。",
+  "origin": "baseline",
+  "package": {
+    "skill_md_path": "<name>/SKILL.md",
+    "type": "zip",
+    "wrap": false
+  },
+  "rule_schema_version": 2,
+  "skill_md": {
+    "max_bytes": 32768,
+    "max_lines": 500
+  },
+  "source": "https://docs.claude.com/en/docs/claude-code/skills",
+  "source_type": "official_docs",
+  "unknown_fields": [],
+  "verification_status": "verified",
+  "verified_at": "2026-11-22"
+}

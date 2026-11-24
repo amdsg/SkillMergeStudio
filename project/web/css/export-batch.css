@@ -1,0 +1,269 @@
+.export-platforms {
+  flex: 1 1 100%;
+  width: 100%;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--line, #d7dde7);
+  padding-top: 0.45rem;
+}
+
+.export-platform-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+}
+
+.export-platform-message {
+  margin: 0.2rem 0;
+  color: #b45309;
+  font-size: 0.8rem;
+}
+
+.export-platform-list {
+  max-height: 220px;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.export-platform-group {
+  border: 0;
+  margin: 0 0 0.4rem;
+  padding: 0;
+}
+
+.export-platform-group legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted, #5b6472);
+  padding: 0.15rem 0;
+}
+
+.export-platform-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.18rem 0.25rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.export-platform-row:hover {
+  background: #f1f5f9;
+}
+
+.export-platform-row.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.export-platform-row input[type="checkbox"] {
+  flex: none;
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.export-platform-label {
+  flex: 1 1 auto;
+  min-width: 8rem;
+  overflow-wrap: anywhere;
+}
+
+.export-platform-format,
+.format-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.format-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.format-badge.type {
+  background: #e0f2fe;
+  color: #075985;
+  border-color: #bae6fd;
+}
+
+.format-badge.ok {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.format-badge.muted {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.format-badge.verified {
+  background: #ccfbf1;
+  color: #115e59;
+  border-color: #99f6e4;
+}
+
+.format-badge.candidate {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.format-badge.wrap {
+  background: #ede9fe;
+  color: #5b21b6;
+  border-color: #ddd6fe;
+}
+
+.export-platform-note {
+  flex: 1 1 100%;
+  color: #b45309;
+  font-size: 0.7rem;
+}
+
+.export-preview,
+.export-results {
+  flex: 1 1 100%;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--line, #d7dde7);
+  padding-top: 0.45rem;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.export-preview-summary,
+.export-results-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+}
+
+.export-preview-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.export-preview-item {
+  border: 1px solid var(--line, #d7dde7);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: #ffffff;
+}
+
+.export-preview-item header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.export-preview-files,
+.export-preview-checks {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.76rem;
+}
+
+.export-preview-checks .error {
+  color: #b91c1c;
+}
+
+.export-preview-checks .warn {
+  color: #b45309;
+}
+
+.export-warning {
+  margin: 0.2rem 0;
+  color: #b45309;
+  font-size: 0.76rem;
+}
+
+.export-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+}
+
+.export-results-table th,
+.export-results-table td {
+  text-align: left;
+  border-bottom: 1px solid var(--line, #d7dde7);
+  padding: 0.3rem 0.35rem;
+  vertical-align: top;
+}
+
+.export-results-table code {
+  overflow-wrap: anywhere;
+}
+
+.export-status-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.7rem;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.export-status-badge.succeeded {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.export-status-badge.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.export-status-badge.cancelled {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.export-error {
+  display: grid;
+  gap: 0.1rem;
+  color: #991b1b;
+}
+
+.export-error em {
+  color: #7c2d12;
+  font-style: normal;
+}
+
+.export-platform-row:focus-within,
+.export-preview-button:focus-visible,
+.export-button:focus-visible {
+  outline: 2px solid #0e7490;
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .export-platform-row {
+    flex-wrap: wrap;
+  }
+  .export-platform-row input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .export-platform-row:hover {
+    background: transparent;
+  }
+}

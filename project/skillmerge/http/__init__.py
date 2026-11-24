@@ -1,0 +1,1 @@
+"""HTTP adapter layer; it must not import services or storage."""

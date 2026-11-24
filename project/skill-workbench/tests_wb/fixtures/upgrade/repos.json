@@ -1,0 +1,16 @@
+{
+  "repos": {
+    "fixture/skill-alpha": {
+      "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "release_tag": "v1.0.0",
+      "pushed_at": "2026-11-20T10:00:00Z",
+      "declaration": {"mode": "model_specific", "targets": ["deepseek"]}
+    },
+    "fixture/skill-beta": {
+      "commit_sha": "dddddddddddddddddddddddddddddddddddddddd",
+      "release_tag": "v1.1.0",
+      "pushed_at": "2026-11-22T10:00:00Z",
+      "declaration": {"mode": "model_specific", "targets": ["deepseek", "chatgpt"]}
+    }
+  }
+}

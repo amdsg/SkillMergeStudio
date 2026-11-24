@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "claude": {"platform": "claude", "profile": "claude"},
+  "chatgpt": {"platform": "chatgpt", "profile": "gpt"},
+  "gemini": {"platform": "gemini-cli", "profile": "gemini"},
+  "deepseek": null,
+  "qwen": {"platform": "qwen", "profile": "qwen"},
+  "kimi": {"platform": "kimi", "profile": "kimi"},
+  "doubao": {"platform": "doubao", "profile": "doubao"},
+  "copilot": {"platform": "copilot", "profile": "gpt"},
+  "cursor": {"platform": "cursor", "profile": "gpt"},
+  "windsurf": {"platform": "windsurf", "profile": "gpt"},
+  "cline": {"platform": "cline", "profile": "gpt"},
+  "roo": {"platform": "roo", "profile": "gpt"},
+  "codex": {"platform": "codex", "profile": "gpt"},
+  "trae": {"platform": "trae", "profile": "gpt"},
+  "qoder": {"platform": "qoder", "profile": "gpt"},
+  "opencode": {"platform": "opencode", "profile": "gpt"},
+  "goose": {"platform": "goose", "profile": "gpt"},
+  "iflow": {"platform": "iflow", "profile": "gpt"},
+  "coze": {"platform": "coze", "profile": "gpt"},
+  "dingtalk": {
+    "platform": null,
+    "candidates": [{"platform": "dingtalk-expert", "profile": "gpt"}, {"platform": "dingtalk-wukong", "profile": "gpt"}],
+    "requires_user_choice": true
+  },
+  "workbuddy": {
+    "platform": null,
+    "candidates": [{"platform": "workbuddy", "profile": "gpt"}, {"platform": "workbuddy-local", "profile": "gpt"}],
+    "requires_user_choice": true
+  },
+  "antigravity": {"platform": "antigravity", "profile": "gpt"},
+  "volcengine_ark": {"platform": "volcengine-ark", "profile": "gpt"},
+  "agent_skills_generic": {"platform": "agent-skills", "profile": "generic"},
+  "prompt_only_generic": {"platform": "prompt-only", "profile": "generic"}
+}

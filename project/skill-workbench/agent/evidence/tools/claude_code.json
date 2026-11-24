@@ -1,0 +1,11 @@
+{
+  "tool_id": "claude_code",
+  "label": "Claude Code",
+  "evidence_level": "verified",
+  "source": "https://docs.claude.com/en/docs/claude-code/skills",
+  "recorded_at": "2026-11-23",
+  "detection": {
+    "paths": [],
+    "note": "路径未在本机实测；扫描时按 unknown 处理，不推断已安装。"
+  }
+}

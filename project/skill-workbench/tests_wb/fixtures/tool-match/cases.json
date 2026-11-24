@@ -1,0 +1,16 @@
+[
+  {
+    "id": "similar-name-without-hints",
+    "hints": [],
+    "similar_name": true,
+    "expect_null": true,
+    "actual": null
+  },
+  {
+    "id": "hint-with-unknown-state",
+    "hints": [{"target_id": "claude", "tool_ids": ["claude_code"]}],
+    "similar_name": false,
+    "expect_null": true,
+    "actual": null
+  }
+]

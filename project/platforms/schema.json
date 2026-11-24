@@ -1,0 +1,135 @@
+{
+  "schema_version": 2,
+  "rule_schema_versions": [1, 2],
+  "required": [
+    "rule_schema_version",
+    "id",
+    "label",
+    "kind",
+    "group",
+    "origin",
+    "batch",
+    "source",
+    "source_type",
+    "verification_status",
+    "evidence_level",
+    "verified_at",
+    "last_verified_at",
+    "unknown_fields",
+    "notes",
+    "aliases"
+  ],
+  "rule_body_fields": [
+    "name",
+    "description",
+    "skill_md",
+    "bundle",
+    "package",
+    "frontmatter",
+    "install"
+  ],
+  "rule_body_required": {
+    "name": ["pattern", "max_length", "forbidden_parts"],
+    "description": ["max_chars", "style"],
+    "skill_md": ["max_lines", "max_bytes"],
+    "bundle": ["max_mb", "max_files", "max_file_mb"],
+    "package": ["type", "wrap", "skill_md_path"],
+    "frontmatter": ["required", "defaults"],
+    "install": ["global", "project"]
+  },
+  "enums": {
+    "kind": ["skill", "prompt"],
+    "group": [
+      "通用",
+      "Claude 生态",
+      "OpenAI 生态",
+      "IDE 集成",
+      "国产大模型",
+      "企业协作",
+      "开源 Agent",
+      "提示词类"
+    ],
+    "source_type": [
+      "official_docs",
+      "ecosystem_directory",
+      "ide_cli_docs",
+      "product_confirmation",
+      "local_contract"
+    ],
+    "verification_status": ["verified", "unknown"],
+    "evidence_level": [
+      "verified",
+      "candidate_skill",
+      "candidate_rules",
+      "discovery_source",
+      "failed_unreachable",
+      "no_evidence"
+    ],
+    "origin": ["baseline", "new"],
+    "reachability": ["ok", "blocked", "not_found", "timeout", "dns", "offline"]
+  },
+  "types": {
+    "id": "pattern:^[a-z0-9][a-z0-9-]{1,63}$",
+    "verified_at": "date-or-null",
+    "last_verified_at": "date-or-null",
+    "unknown_fields": "string[]",
+    "aliases": "string[]",
+    "legacy_limits": "object-or-null"
+  },
+  "conditional": [
+    {
+      "when": {"verification_status": "verified"},
+      "require": [
+        "source!=null",
+        "verified_at!=null",
+        "evidence_level==verified",
+        "unknown_fields==[]",
+        "rule_body_all_present"
+      ]
+    },
+    {
+      "when": {"verification_status": "unknown"},
+      "require": [
+        "source==null",
+        "verified_at==null",
+        "evidence_level in [candidate_skill,candidate_rules]",
+        "unknown_fields!=[]",
+        "notes!=''",
+        "rule_body_all_null"
+      ]
+    }
+  ],
+  "unique": ["id", "aliases"],
+  "forbid_in_registry": ["discovery_source", "failed_unreachable", "no_evidence"],
+  "source_type_local_prefix": "local://",
+  "baseline_ids": [
+    "agent-skills",
+    "antigravity",
+    "chatgpt",
+    "claude",
+    "cline",
+    "codebuddy",
+    "codex",
+    "coze",
+    "copilot",
+    "cursor",
+    "dingtalk-expert",
+    "dingtalk-wukong",
+    "doubao",
+    "gemini-cli",
+    "generic",
+    "goose",
+    "iflow",
+    "kimi",
+    "opencode",
+    "prompt-only",
+    "qoder",
+    "qwen",
+    "roo",
+    "trae",
+    "volcengine-ark",
+    "windsurf",
+    "workbuddy",
+    "workbuddy-local"
+  ]
+}

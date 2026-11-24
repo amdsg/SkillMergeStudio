@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "status": "unregistered",
+  "source_files": [],
+  "field_names": [],
+  "note": "在真实样本核对记录建立前，不登记任何声明字段；一律判 unknown，禁止用 description/topics 推断适用目标。"
+}

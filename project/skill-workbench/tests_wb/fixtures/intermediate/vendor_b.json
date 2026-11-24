@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "identity": {"name": "vendor-b skill", "id": "vendor-b", "version": "2.0.0", "tags": ["variant-b"]},
+  "intent": {"summary": "Vendor B shaped prompt mapped through the neutral layer.", "source_kind": "prompt_text"},
+  "capabilities": [
+    {"trigger": "on a different trigger", "inputs": ["text"], "outputs": ["summary"], "constraints": []}
+  ],
+  "instructions": [
+    {"step": 1, "text": "Parse the prompt."},
+    {"step": 2, "text": "Return the summary."}
+  ],
+  "examples": [],
+  "resources": [],
+  "provenance": {
+    "source": "fixture://vendor-b",
+    "native_targets": ["unknown"],
+    "import_id": "imp-b",
+    "mapping_report_ref": "map-b"
+  }
+}

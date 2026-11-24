@@ -1,0 +1,12 @@
+{
+  "registry_version": 1,
+  "endpoints": [
+    {"id": "repo_search", "method": "GET", "pattern": "^/search/repositories$", "purpose": "search"},
+    {"id": "repo_detail", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+$", "purpose": "detail"},
+    {"id": "repo_releases", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/releases$", "purpose": "releases"},
+    {"id": "repo_contents", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/contents(/.*)?$", "purpose": "contents"},
+    {"id": "repo_commits", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/commits$", "purpose": "commits"},
+    {"id": "repo_readme", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/readme$", "purpose": "readme"},
+    {"id": "rate_limit", "method": "GET", "pattern": "^/rate_limit$", "purpose": "quota"}
+  ]
+}

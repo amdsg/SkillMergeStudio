@@ -1,0 +1,1 @@
+"""API layer: validates input and calls services; no HTTP details."""

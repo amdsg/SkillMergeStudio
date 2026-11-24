@@ -1,0 +1,65 @@
+{
+  "applicability": {
+    "universal": {"zh": "通用", "en": "Universal"},
+    "model_specific": {"zh": "仅适用于指定目标", "en": "Model-specific"},
+    "unknown": {"zh": "适用目标未声明", "en": "Applicability not declared"}
+  },
+  "evidence_level": {
+    "verified": {"zh": "已核验", "en": "Verified"},
+    "verified_official": {"zh": "已核验（官方）", "en": "Verified (official)"},
+    "verified_local_contract": {"zh": "结构可复现", "en": "Reproducible structure"},
+    "candidate": {"zh": "规则未核验", "en": "Rules not verified"},
+    "unknown": {"zh": "未核验", "en": "Not verified"}
+  },
+  "evidence_class": {
+    "measured_conversion": {"zh": "已实测转换", "en": "Measured conversion"},
+    "official_format_docs": {"zh": "官方格式文档", "en": "Official format docs"},
+    "community_experience": {"zh": "社区经验", "en": "Community experience"},
+    "unverified": {"zh": "未验证", "en": "Unverified"}
+  },
+  "tool_selection_basis": {
+    "auto_matched": {"zh": "自动匹配", "en": "Auto-matched"},
+    "user_selected": {"zh": "用户选择", "en": "User selected"}
+  },
+  "scan_state": {
+    "detected": {"zh": "已检测到", "en": "Detected"},
+    "not_detected": {"zh": "未检测到", "en": "Not detected"},
+    "unknown": {"zh": "检测结果未知", "en": "Detection unknown"}
+  },
+  "upgrade_state": {
+    "has_update": {"zh": "有更新", "en": "Update available"},
+    "up_to_date": {"zh": "已是最新", "en": "Up to date"},
+    "check_failed": {"zh": "检查失败", "en": "Check failed"},
+    "removed": {"zh": "仓库已移除", "en": "Repository removed"},
+    "renamed": {"zh": "仓库已改名", "en": "Repository renamed"},
+    "inaccessible": {"zh": "仓库不可访问", "en": "Repository inaccessible"},
+    "unknown": {"zh": "无法比较", "en": "Cannot compare"}
+  },
+  "install_state": {
+    "planned": {"zh": "已生成计划", "en": "Plan created"},
+    "awaiting_confirm": {"zh": "等待确认", "en": "Awaiting confirmation"},
+    "running": {"zh": "执行中", "en": "Running"},
+    "succeeded": {"zh": "已完成", "en": "Completed"},
+    "failed": {"zh": "失败", "en": "Failed"},
+    "cancelled": {"zh": "已取消", "en": "Cancelled"},
+    "interrupted": {"zh": "已中断", "en": "Interrupted"},
+    "rolled_back": {"zh": "已回滚", "en": "Rolled back"}
+  },
+  "conflict_type": {
+    "chapter": {"zh": "章节冲突", "en": "Chapter conflict"},
+    "metadata": {"zh": "元数据冲突", "en": "Metadata conflict"},
+    "resource": {"zh": "资源冲突", "en": "Resource conflict"},
+    "naming": {"zh": "命名冲突", "en": "Naming conflict"}
+  },
+  "mode": {
+    "universal": {"zh": "通用", "en": "Universal"},
+    "model_specific": {"zh": "仅限指定目标", "en": "Model-specific"},
+    "unknown": {"zh": "未声明", "en": "Not declared"}
+  },
+  "tier": {
+    "official": {"zh": "官方结构", "en": "Official structure"},
+    "local_contract": {"zh": "本地契约结构", "en": "Local contract structure"},
+    "candidate": {"zh": "候选通用文本", "en": "Candidate generic text"},
+    "generic": {"zh": "通用文本", "en": "Generic text"}
+  }
+}

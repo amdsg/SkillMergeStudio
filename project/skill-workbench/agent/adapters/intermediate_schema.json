@@ -1,0 +1,49 @@
+{
+  "schema_name": "skill-workbench-intermediate",
+  "schema_version": 1,
+  "required_keys": [
+    "schema_version",
+    "identity",
+    "intent",
+    "capabilities",
+    "instructions",
+    "examples",
+    "resources",
+    "provenance"
+  ],
+  "identity_fields": ["name", "id", "version", "tags"],
+  "capability_fields": ["trigger", "inputs", "outputs", "constraints"],
+  "provenance_fields": ["source", "native_targets", "import_id", "mapping_report_ref"],
+  "forbidden_field_names": [
+    "^claude_.*",
+    "^openai_.*",
+    "^gpt_.*",
+    "^doubao_.*",
+    "^deepseek_.*",
+    "^qwen_.*",
+    "^kimi_.*"
+  ],
+  "forbidden_value_patterns": [
+    "最多\\s*\\d+\\s*(字符|字|tokens?|bytes?)",
+    "至少\\s*\\d+\\s*(字符|字|tokens?|bytes?)",
+    "\\bmax\\s*(chars?|tokens?|bytes?)\\b\\s*[:=]?\\s*\\d+",
+    "官方兼容",
+    "已适配",
+    "official compatible"
+  ],
+  "unknown_literal": "unknown",
+  "empty_allowed_paths": [
+    "identity.tags",
+    "examples",
+    "resources",
+    "provenance.native_targets"
+  ],
+  "deprecated_fields": [
+    {
+      "path": "intent.model_hint",
+      "since_version": 1,
+      "remove_after_version": 2,
+      "note": "目标提示只能存在于模板层，不进入中间格式。"
+    }
+  ]
+}

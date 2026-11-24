@@ -1,0 +1,3 @@
+{"state": "succeeded", "plan_hash": "plan-1", "files": ["SKILL.md"], "created_at": "2026-11-23T18:18:53.018676+00:00"}
+{"state": "failed", "plan_hash": "plan-1", "error": "injected failure", "created_at": "2026-11-23T18:18:53.030407+00:00"}
+{"state": "rollback_failed", "plan_hash": "plan-1", "error": "boom", "created_at": "2026-11-23T18:18:53.035139+00:00"}

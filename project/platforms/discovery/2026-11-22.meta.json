@@ -1,0 +1,5 @@
+{
+  "round": "2026-11-22",
+  "discovery_keys": ["skills-sh"],
+  "note": "Skills.sh 是 Agent Skills 目录站，不是平台；仅为本轮元数据，不写入平台规则。"
+}

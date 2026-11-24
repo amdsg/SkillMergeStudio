@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Skill Workbench",
+  "version": "0.1.0",
+  "description": "Local companion for skill search, download, merge, convert and upgrade.",
+  "permissions": ["storage", "alarms", "tabs"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "ui/popup.html"},
+  "options_page": "ui/app.html"
+}

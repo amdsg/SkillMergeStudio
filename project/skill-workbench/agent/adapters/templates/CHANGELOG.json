@@ -1,0 +1,6 @@
+{
+  "entries": [
+    {"template_id": "generic", "version": 1, "sections_sha256": "a532a6c92eefd9ceeef4e5c0d23edf9491ab9ee001a8378d5cb5690386475713", "changed_at": "2026-11-23"},
+    {"template_id": "claude", "version": 1, "sections_sha256": "a532a6c92eefd9ceeef4e5c0d23edf9491ab9ee001a8378d5cb5690386475713", "changed_at": "2026-11-23"}
+  ]
+}

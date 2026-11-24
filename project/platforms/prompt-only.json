@@ -1,0 +1,53 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": {
+    "max_file_mb": 2,
+    "max_files": 100,
+    "max_mb": 10
+  },
+  "description": {
+    "max_chars": 2000,
+    "style": "中文描述"
+  },
+  "evidence_level": "verified",
+  "frontmatter": {
+    "defaults": {},
+    "required": [
+      "name",
+      "description"
+    ]
+  },
+  "group": "提示词类",
+  "id": "prompt-only",
+  "install": {
+    "global": "",
+    "project": ""
+  },
+  "kind": "prompt",
+  "label": "提示词包（聊天模型）",
+  "last_verified_at": "2026-11-22",
+  "legacy_limits": null,
+  "name": {
+    "forbidden_parts": [],
+    "max_length": 64,
+    "pattern": "^[a-z0-9-]+$"
+  },
+  "notes": "给不支持 Skill 的聊天模型：生成 prompt.md + manifest.json + README.txt；支持 full/compact/minimal 与 Claude/GPT/Gemini/Qwen/Kimi/Doubao/DeepSeek/generic 风格。",
+  "origin": "baseline",
+  "package": {
+    "skill_md_path": "prompt.md",
+    "type": "dir",
+    "wrap": false
+  },
+  "rule_schema_version": 2,
+  "skill_md": {
+    "max_bytes": 1048576,
+    "max_lines": 100000
+  },
+  "source": "local://skillmerge/prompt-only",
+  "source_type": "local_contract",
+  "unknown_fields": [],
+  "verification_status": "verified",
+  "verified_at": "2026-11-22"
+}

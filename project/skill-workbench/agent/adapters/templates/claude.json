@@ -1,0 +1,14 @@
+{
+  "template_id": "claude",
+  "target_id": "claude",
+  "template_version": 1,
+  "kind": "skill",
+  "evidence_level": "official",
+  "sections": [
+    {"heading": "Overview", "required": true, "source_field": "intent.summary"},
+    {"heading": "Capabilities", "required": true, "source_field": "capabilities"},
+    {"heading": "Instructions", "required": true, "source_field": "instructions"},
+    {"heading": "Examples", "required": false, "source_field": "examples"},
+    {"heading": "Resources", "required": false, "source_field": "resources"}
+  ]
+}

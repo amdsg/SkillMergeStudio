@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "identity": {"name": "generic markdown skill", "id": "generic-md", "version": "0.1.0", "tags": []},
+  "intent": {"summary": "Generic Markdown source with no vendor-specific fields.", "source_kind": "markdown"},
+  "capabilities": [
+    {"trigger": "when the user asks", "inputs": ["text"], "outputs": ["text"], "constraints": []}
+  ],
+  "instructions": [
+    {"step": 1, "text": "Follow the Markdown sections in order."}
+  ],
+  "examples": [],
+  "resources": [],
+  "provenance": {
+    "source": "fixture://generic-md",
+    "native_targets": [],
+    "import_id": "imp-g",
+    "mapping_report_ref": "map-g"
+  }
+}

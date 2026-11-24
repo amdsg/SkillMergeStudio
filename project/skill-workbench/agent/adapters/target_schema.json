@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Skill Workbench target registry entry",
+  "type": "object",
+  "required": [
+    "id", "label", "kind", "format_profile", "evidence_level", "evidence_subtype",
+    "source", "source_type", "verified_at", "notes", "unknown_fields", "group",
+    "aliases", "format_family", "entry_version", "enabled", "provenance", "adapter",
+    "tool_hints"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "label": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["skill", "prompt", "generic"]},
+    "format_profile": {"type": "string", "minLength": 1},
+    "evidence_level": {"enum": ["verified", "candidate", "unknown"]},
+    "evidence_subtype": {"enum": ["official", "local_contract", null]},
+    "source": {"type": "string"},
+    "source_type": {"enum": ["official_docs", "local_contract", "none"]},
+    "verified_at": {"type": ["string", "null"]},
+    "last_verified_at": {"type": ["string", "null"]},
+    "notes": {"type": "string", "minLength": 8},
+    "unknown_fields": {"type": "array", "items": {"type": "string"}},
+    "group": {"type": "string", "minLength": 1},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "format_family": {"enum": ["skill_md", "prompt_text", "rules_md", "config_json", "bundle_zip", "generic_text", "unknown"]},
+    "entry_version": {"type": "integer", "minimum": 1},
+    "enabled": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["added_by", "added_at", "rationale", "upstream_ref"],
+      "properties": {
+        "added_by": {"type": "string", "minLength": 1},
+        "added_at": {"type": "string", "minLength": 8},
+        "rationale": {"type": "string", "minLength": 8},
+        "upstream_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "adapter": {
+      "type": "object",
+      "required": ["detector", "converter"],
+      "properties": {
+        "detector": {"type": "string", "pattern": "^(builtin:[a-z0-9_]+@\\d+|engine:[a-z0-9_/-]+)$"},
+        "converter": {"type": "string", "pattern": "^(builtin:[a-z0-9_]+@\\d+|engine:[a-z0-9_/-]+)$"}
+      }
+    },
+    "tool_hints": {"type": "array", "items": {"type": "string"}},
+    "mapped_engine": {
+      "type": ["object", "null"],
+      "properties": {"platform": {"type": "string"}, "profile": {"type": "string"}}
+    }
+  },
+  "additionalProperties": false
+}

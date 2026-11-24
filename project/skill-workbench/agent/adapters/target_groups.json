@@ -1,0 +1,6 @@
+[
+  {"group_id": "verified", "label_key": "wb.group.verified", "default_collapsed": false, "order": 1},
+  {"group_id": "cloud", "label_key": "wb.group.cloud", "default_collapsed": true, "order": 4},
+  {"group_id": "editor", "label_key": "wb.group.editor", "default_collapsed": true, "order": 3},
+  {"group_id": "generic", "label_key": "wb.group.generic", "default_collapsed": false, "order": 2}
+]

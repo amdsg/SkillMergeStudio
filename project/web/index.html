@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skill Merge Studio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/m2.css">
+  <link rel="stylesheet" href="/css/m3.css">
+  <link rel="stylesheet" href="/css/m3b.css">
+  <link rel="stylesheet" href="/css/m4.css">
+  <link rel="stylesheet" href="/css/m1m4.css">
+  <link rel="stylesheet" href="/css/progress.css">
+  <link rel="stylesheet" href="/css/export-batch.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">SM</span>
+      <div>
+        <h1 data-i18n="app.title">Skill Merge Studio</h1>
+        <p data-i18n="app.subtitle">扫描 · 分类 · 合并 · 导出</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <select id="lang-select" aria-label="Language">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
+      <button id="settings-button" class="secondary" type="button" data-i18n="toolbar.settings">设置</button>
+    </div>
+    <nav class="stepper" aria-label="流程步骤" data-i18n="step.label" data-i18n-attr="aria-label">
+      <span class="step active" data-i18n="step.scan">扫描</span>
+      <span class="step active" data-i18n="step.classify">分类</span>
+      <span class="step active" data-i18n="step.select">选择</span>
+      <span class="step" data-i18n="step.preview">预览</span>
+      <span class="step" data-i18n="step.export">导出</span>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h2 data-i18n="sidebar.title">分类</h2>
+        <button id="classify-button" class="secondary" type="button" data-i18n="sidebar.autoClassify">自动分类</button>
+      </div>
+      <ul id="category-list" class="category-list">
+        <li class="muted" data-i18n="sidebar.empty">扫描后显示分类</li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <button id="scan-button" class="primary" type="button" data-i18n="toolbar.scan">扫描常见目录</button>
+        <button id="refresh-button" class="secondary" type="button" data-i18n="toolbar.refresh">刷新列表</button>
+        <button id="history-button" class="secondary" type="button" data-i18n="toolbar.history">产物历史</button>
+        <input id="search" type="search" data-i18n-placeholder="toolbar.search" data-i18n="search.aria" data-i18n-attr="aria-label" aria-label="搜索技能">
+      </div>
+
+      <div class="toolbar merge-toolbar">
+        <label id="platform-label" for="platform-input" data-i18n="toolbar.platform">目标平台</label>
+        <div id="platform-picker" class="platform-picker">
+          <input id="platform-input" type="text" role="combobox" aria-labelledby="platform-label"
+                 aria-autocomplete="list" aria-expanded="false" aria-controls="platform-listbox"
+                 autocomplete="off" data-i18n-placeholder="toolbar.platformSearch" data-i18n="toolbar.platformSearch" data-i18n-attr="placeholder">
+          <div id="platform-listbox" role="listbox" class="platform-listbox" aria-label="平台列表"></div>
+          <select id="platform-select" class="platform-hidden-select" aria-hidden="true" tabindex="-1"></select>
+        </div>
+        <label for="merge-name" data-i18n="toolbar.name">产物名称</label>
+        <input id="merge-name" value="merged-skill" maxlength="120" aria-label="产物名称">
+      </div>
+
+      <div id="filter-bar" class="filter-bar" role="group" aria-label="筛选">
+        <label for="filter-platform" data-i18n="filter.platform">来源平台</label>
+        <select id="filter-platform"></select>
+        <label for="filter-size" data-i18n="filter.size">体积</label>
+        <select id="filter-size"></select>
+        <label for="filter-quality" data-i18n="filter.quality">质量</label>
+        <select id="filter-quality"></select>
+        <label for="filter-time" data-i18n="filter.time">更新时间</label>
+        <select id="filter-time"></select>
+        <label for="filter-copies" data-i18n="filter.copies">副本</label>
+        <select id="filter-copies"></select>
+        <button id="filter-reset" class="secondary" type="button" data-i18n="filter.reset">重置筛选</button>
+      </div>
+
+      <div class="quick-filters">
+        <button data-quick="uncategorized" class="secondary" type="button" data-i18n="quick.uncategorized">未分类</button>
+        <button data-quick="duplicates" class="secondary" type="button" data-i18n="quick.duplicates">重复组</button>
+        <button data-quick="lowQuality" class="secondary" type="button" data-i18n="quick.lowQuality">质量&lt;60</button>
+        <span class="muted shortcut-hint" data-i18n="keyboard.help">快捷键</span>
+      </div>
+
+      <div class="platform-status-row">
+        <div id="platform-counts" class="counts-strip" role="status" data-i18n="platform.loading">平台计数加载中…</div>
+        <button id="candidate-pool-button" class="secondary" type="button" data-i18n="toolbar.candidates">候选池</button>
+      </div>
+
+      <div class="status-row">
+        <div id="status" class="status" role="status" data-i18n="status.idle">尚未扫描。点击“扫描常见目录”开始。</div>
+        <button id="cancel-button" class="secondary hidden" type="button" data-i18n="status.cancel">取消任务</button>
+      </div>
+
+      <div id="job-progress" class="job-progress hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="任务进度" data-i18n="progress.ariaLabel" data-i18n-attr="aria-label"></div>
+      <div id="scan-summary" class="scan-summary hidden" role="status"></div>
+
+      <div id="list" class="list" aria-live="polite"></div>
+    </section>
+
+    <aside id="detail" class="detail" aria-label="技能详情">
+      <h2 data-i18n="sidebar.title">详情</h2>
+      <p class="muted" data-i18n="detail.empty">选择左侧技能查看详情</p>
+    </aside>
+  </main>
+
+  <div id="basket-bar" class="basket-bar" aria-live="polite">
+    <span id="basket-summary"></span>
+    <div class="basket-actions">
+      <button id="select-visible" class="secondary" type="button" data-i18n="basket.selectVisible">全选当前</button>
+      <button id="clear-basket" class="secondary" type="button" data-i18n="basket.clear">清空</button>
+      <button id="preview-button" class="primary" type="button" disabled data-i18n="basket.preview">预览</button>
+    </div>
+  </div>
+
+  <div id="preview-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+    <div class="modal-card">
+      <header class="modal-header">
+        <h2 id="preview-title" data-i18n="preview.title">合并预览</h2>
+        <button id="close-modal" class="secondary" type="button" data-i18n="preview.close">关闭</button>
+      </header>
+      <div class="tabs" role="tablist" aria-label="预览标签">
+        <button type="button" class="tab active" data-tab="chapters" role="tab" data-i18n="preview.chapters">章节</button>
+        <button type="button" class="tab" data-tab="conflicts" role="tab" data-i18n="preview.conflicts">冲突</button>
+        <button type="button" class="tab" data-tab="diff" role="tab" data-i18n="preview.diff">差异</button>
+        <button type="button" class="tab" data-tab="size" role="tab" data-i18n="preview.size">体积</button>
+        <button type="button" class="tab" data-tab="validation" role="tab" data-i18n="preview.validation">校验</button>
+      </div>
+      <div id="preview-content" class="preview-content"></div>
+      <footer class="modal-footer">
+        <span id="preview-status" class="muted"></span>
+        <button id="merge-button" class="primary" type="button" data-i18n="preview.merge">合并</button>
+      </footer>
+      <div id="export-panel" class="export-panel hidden">
+        <label for="export-mode" data-i18n="export.mode">模式</label>
+        <select id="export-mode">
+          <option value="dir" data-i18n="export.mode.dir">目录</option>
+          <option value="zip" selected data-i18n="export.mode.zip">zip</option>
+          <option value="download" data-i18n="export.mode.download">zip + 下载</option>
+          <option value="install" data-i18n="export.mode.install">安装</option>
+        </select>
+        <label for="length-mode" data-i18n="export.length">提示词篇幅</label>
+        <select id="length-mode">
+          <option value="full">full</option>
+          <option value="compact" selected>compact</option>
+          <option value="minimal">minimal</option>
+        </select>
+        <label for="profile" data-i18n="export.profile">提示词风格</label>
+        <select id="profile">
+          <option value="generic">generic</option>
+          <option value="claude">claude</option>
+          <option value="gpt">gpt</option>
+          <option value="gemini">gemini</option>
+          <option value="qwen">qwen</option>
+          <option value="kimi">kimi</option>
+          <option value="doubao">doubao</option>
+          <option value="deepseek">deepseek</option>
+        </select>
+        <button id="export-button" class="primary" type="button" data-i18n="export.button">导出</button>
+        <button id="export-preview-button" class="secondary" type="button" data-i18n="export.preview">预览格式</button>
+        <span id="export-status" class="muted"></span>
+        <div id="export-platforms" class="export-platforms"></div>
+        <div id="export-preview" class="export-preview hidden"></div>
+        <div id="export-results" class="export-results hidden" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="candidate-pool-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="candidate-pool-title">
+    <div class="modal-card">
+      <header class="modal-header">
+        <h2 id="candidate-pool-title" data-i18n="toolbar.candidates">候选平台池</h2>
+        <button id="candidate-pool-close" class="secondary" type="button" data-i18n="preview.close">关闭</button>
+      </header>
+      <div id="candidate-pool-list" class="candidate-pool-list"></div>
+    </div>
+  </div>
+
+  <div id="history-modal" class="modal hidden history-modal" role="dialog" aria-modal="true" aria-labelledby="history-title">
+    <div class="modal-card">
+      <header class="modal-header">
+        <h2 id="history-title" data-i18n="history.title">产物历史</h2>
+        <button id="history-close" class="secondary" type="button" data-i18n="history.close">关闭</button>
+      </header>
+      <div id="history-message" class="history-message"></div>
+      <div class="history-filter">
+        <label for="history-platform" data-i18n="history.filterPlatform">平台筛选</label>
+        <select id="history-platform"></select>
+      </div>
+      <div id="history-body" class="history-body"></div>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal-card settings-card">
+      <header class="modal-header">
+        <h2 id="settings-title" data-i18n="settings.title">设置</h2>
+        <button id="settings-close" class="secondary" type="button" data-i18n="settings.close">关闭</button>
+      </header>
+      <form id="settings-form" class="settings-form">
+        <label for="settings-roots" data-i18n="settings.roots">扫描根目录（每行一个）</label>
+        <textarea id="settings-roots" rows="3"></textarea>
+        <label for="settings-save-dir" data-i18n="settings.saveDir">保存目录</label>
+        <input id="settings-save-dir" type="text">
+        <label for="settings-depth" data-i18n="settings.depth">扫描深度</label>
+        <input id="settings-depth" type="number" min="1" max="30" value="10">
+        <details class="advanced">
+          <summary data-i18n="settings.advanced">高级设置</summary>
+          <label for="settings-ignore" data-i18n="settings.ignore">忽略目录（每行一个）</label>
+          <textarea id="settings-ignore" rows="3"></textarea>
+        </details>
+        <fieldset class="ai-block">
+          <legend data-i18n="settings.ai">AI（可选）</legend>
+          <label class="inline"><input id="settings-ai-enabled" type="checkbox"> <span data-i18n="settings.aiEnabled">启用 AI</span></label>
+          <label for="settings-ai-base" data-i18n="settings.aiBaseUrl">接口地址（OpenAI 兼容）</label>
+          <input id="settings-ai-base" type="text" autocomplete="off">
+          <label for="settings-ai-model" data-i18n="settings.aiModel">模型</label>
+          <input id="settings-ai-model" type="text" autocomplete="off">
+          <label for="settings-ai-key" data-i18n="settings.aiKey">API Key（只写不读）</label>
+          <input id="settings-ai-key" type="password" autocomplete="new-password">
+          <button id="settings-test" type="button" class="secondary" data-i18n="settings.aiTest">测试连通性</button>
+        </fieldset>
+        <div id="settings-status" class="settings-status" role="status"></div>
+        <button id="settings-save" type="button" class="primary" data-i18n="settings.save">保存</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": null,
+  "description": null,
+  "evidence_level": "candidate_rules",
+  "frontmatter": null,
+  "group": "国产大模型",
+  "id": "volcengine-ark",
+  "install": null,
+  "kind": "skill",
+  "label": "火山方舟",
+  "last_verified_at": null,
+  "legacy_limits": {
+    "bundle": {
+      "max_file_mb": 10,
+      "max_files": 200,
+      "max_mb": 30
+    },
+    "description": {
+      "max_chars": 1000,
+      "style": "说明用途与触发场景"
+    },
+    "frontmatter": {
+      "defaults": {
+        "author": "unknown",
+        "version": "1.0.0"
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "install": {
+      "global": "",
+      "project": ""
+    },
+    "name": {
+      "forbidden_parts": [],
+      "max_length": 64,
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "package": {
+      "skill_md_path": "SKILL.md",
+      "type": "dir",
+      "wrap": false
+    },
+    "skill_md": {
+      "max_bytes": 10485760,
+      "max_lines": 5000
+    }
+  },
+  "name": null,
+  "notes": "规则未核验；采用通用目录与保守限制，导出前请核对官方文档。；v1 兼容读取：无官方来源，未升级（2026-11-21）。",
+  "origin": "baseline",
+  "package": null,
+  "rule_schema_version": 2,
+  "skill_md": null,
+  "source": null,
+  "source_type": "official_docs",
+  "unknown_fields": [
+    "bundle",
+    "description",
+    "frontmatter",
+    "install",
+    "name",
+    "package",
+    "skill_md"
+  ],
+  "verification_status": "unknown",
+  "verified_at": null
+}

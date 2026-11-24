@@ -1,0 +1,21 @@
+{
+  "expected_count": 15,
+  "doc_surfaces": [],
+  "screens": [
+    {"screen_id": "search", "states": ["empty", "loading", "failed", "ready"], "assertions": ["keys_resolved", "no_cjk_in_en", "next_action_visible"]},
+    {"screen_id": "download", "states": ["empty", "loading", "failed", "ready"], "assertions": ["ignored_categories", "ref_integrity_hint"]},
+    {"screen_id": "basket", "states": ["empty", "ready"], "assertions": ["selection_persisted", "applicability_per_row"]},
+    {"screen_id": "merge", "states": ["empty", "loading", "failed", "ready"], "assertions": ["preview_zero_write", "conflict_dual_text"]},
+    {"screen_id": "convert", "states": ["empty", "loading", "failed", "ready"], "assertions": ["three_regions", "search_visible", "unknown_warning"]},
+    {"screen_id": "config_preview", "states": ["empty", "loading", "failed", "ready"], "assertions": ["applicability_and_tool_separate", "ack_checkbox"]},
+    {"screen_id": "write", "states": ["disabled", "ready", "failed", "done"], "assertions": ["capability_disabled_explained", "backup_path_shown"]},
+    {"screen_id": "upgrade", "states": ["empty", "loading", "failed", "ready"], "assertions": ["seven_states", "declaration_diff_present", "rollback_entry"]},
+    {"screen_id": "export", "states": ["empty", "ready", "failed"], "assertions": ["target_label_resolved", "no_official_claim"]},
+    {"screen_id": "history", "states": ["empty", "ready", "failed"], "assertions": ["undo_confirm", "rollback_confirm"]},
+    {"screen_id": "settings", "states": ["ready", "failed"], "assertions": ["capabilities_default_off", "risk_ack_required"]},
+    {"screen_id": "diagnostics", "states": ["ready", "failed"], "assertions": ["redacted_paths", "request_id_chain"]},
+    {"screen_id": "tutorial", "states": ["closed", "open", "failed"], "assertions": ["seven_steps", "no_write_actions", "keyboard_exit"]},
+    {"screen_id": "popup", "states": ["ready", "failed"], "assertions": ["pair_state", "agent_state"]},
+    {"screen_id": "errors", "states": ["message", "fix"], "assertions": ["code_is_constant", "message_key_resolved", "fix_key_resolved"]}
+  ]
+}

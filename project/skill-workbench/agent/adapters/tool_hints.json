@@ -1,0 +1,9 @@
+[
+  {
+    "target_id": "claude",
+    "tool_ids": ["claude_code"],
+    "basis": "official_docs",
+    "source": "https://docs.claude.com/en/docs/claude-code/skills",
+    "recorded_at": "2026-11-23"
+  }
+]

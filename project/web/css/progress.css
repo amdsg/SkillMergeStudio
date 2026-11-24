@@ -1,0 +1,132 @@
+.job-progress {
+  margin: 0.35rem 0 0.25rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line, #d7dde7);
+  border-radius: 10px;
+  background: var(--panel, #ffffff);
+}
+
+.progress-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted, #5b6472);
+}
+
+.progress-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.progress-percent {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text, #1f2937);
+}
+
+.progress-track {
+  position: relative;
+  height: 10px;
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  background: #e5eaf1;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0e7490, #14b8a6);
+  transition: width 180ms linear;
+}
+
+.job-progress[data-mode="indeterminate"] .progress-fill {
+  width: 35%;
+  background: linear-gradient(90deg, #0e7490, #14b8a6, #0e7490);
+  background-size: 200% 100%;
+  animation: sms-progress-slide 1.2s ease-in-out infinite;
+  transition: none;
+}
+
+.job-progress[data-status="cancelling"] .progress-fill {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.job-progress[data-status="cancelled"] .progress-fill {
+  background: #d97706;
+}
+
+.job-progress[data-status="failed"] .progress-fill {
+  background: #b91c1c;
+}
+
+.job-progress[data-status="succeeded"] .progress-fill {
+  background: linear-gradient(90deg, #047857, #10b981);
+}
+
+.job-progress[data-mode="terminal"] .progress-text {
+  color: var(--text, #1f2937);
+  font-weight: 600;
+}
+
+.job-progress:focus-visible {
+  outline: 2px solid #0e7490;
+  outline-offset: 2px;
+}
+
+.scan-summary {
+  margin: 0.2rem 0 0.4rem;
+  padding: 0.45rem 0.7rem;
+  border-left: 3px solid #14b8a6;
+  background: #f0fdfa;
+  color: var(--text, #1f2937);
+  font-size: 0.82rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.scan-summary-button {
+  margin-left: 0.5rem;
+  border: 1px solid var(--line, #d7dde7);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--muted, #5b6472);
+  font-size: 0.78rem;
+  padding: 0.08rem 0.45rem;
+  cursor: pointer;
+}
+
+.scan-summary-button:focus-visible {
+  outline: 2px solid #0e7490;
+  outline-offset: 2px;
+}
+
+@keyframes sms-progress-slide {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(260%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-progress[data-mode="indeterminate"] .progress-fill {
+    animation: none;
+    transform: none;
+    width: 35%;
+  }
+  .progress-fill {
+    transition: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .progress-meta {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}

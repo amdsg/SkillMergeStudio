@@ -1,0 +1,71 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": null,
+  "description": null,
+  "evidence_level": "candidate_rules",
+  "frontmatter": null,
+  "group": "OpenAI 生态",
+  "id": "chatgpt",
+  "install": null,
+  "kind": "skill",
+  "label": "ChatGPT",
+  "last_verified_at": null,
+  "legacy_limits": {
+    "bundle": {
+      "max_file_mb": 10,
+      "max_files": 200,
+      "max_mb": 30
+    },
+    "description": {
+      "max_chars": 1000,
+      "style": "说明用途与触发场景"
+    },
+    "frontmatter": {
+      "defaults": {
+        "version": "1.0.0"
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "install": {
+      "global": "",
+      "project": ""
+    },
+    "name": {
+      "forbidden_parts": [],
+      "max_length": 64,
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "package": {
+      "skill_md_path": "<name>/SKILL.md",
+      "type": "zip",
+      "wrap": false
+    },
+    "skill_md": {
+      "max_bytes": 10485760,
+      "max_lines": 5000
+    }
+  },
+  "name": null,
+  "notes": "规则未核验。仅 Business/Enterprise/Edu 工作区可上传，上传后可能进入安全扫描；本工具采用保守 zip≤30MB、顶层 <name>/SKILL.md。；v1 兼容读取：无官方来源，未升级（2026-11-21）。",
+  "origin": "baseline",
+  "package": null,
+  "rule_schema_version": 2,
+  "skill_md": null,
+  "source": null,
+  "source_type": "official_docs",
+  "unknown_fields": [
+    "bundle",
+    "description",
+    "frontmatter",
+    "install",
+    "name",
+    "package",
+    "skill_md"
+  ],
+  "verification_status": "unknown",
+  "verified_at": null
+}

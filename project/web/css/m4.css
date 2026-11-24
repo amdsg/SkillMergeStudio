@@ -1,0 +1,199 @@
+#list {
+  display: block;
+  position: relative;
+  height: calc(100vh - 320px);
+  min-height: 320px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;
+}
+
+.vlist-inner {
+  position: relative;
+  width: 100%;
+}
+
+.row.vrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.row.vrow .row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.row.vrow .row-main {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.row.vrow.bad {
+  border-color: var(--danger, #b3261e);
+}
+
+.flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--danger, #b3261e);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.row.vrow .row-meta {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.7fr 0.7fr 0.6fr 1fr;
+  gap: 8px;
+  align-items: center;
+  justify-content: initial;
+  width: 100%;
+}
+
+.row.vrow .row-meta .cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-list button.active {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tag.warn {
+  background: #fff4e5;
+  border-color: #f0b05e;
+  color: #8a5200;
+}
+
+.hit-list,
+.artifact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.hit-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.hit-word {
+  font-weight: 600;
+}
+
+.hit-meta {
+  color: var(--text-muted);
+}
+
+.artifact-list li {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--surface-muted);
+}
+
+.artifact-head,
+.artifact-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.artifact-meta {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+.history-modal .modal-card {
+  width: min(1000px, 94vw);
+}
+
+.history-message {
+  min-height: 20px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.history-message.ok {
+  color: var(--accent-strong);
+}
+
+.history-message.error {
+  color: var(--danger, #b3261e);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.history-table th,
+.history-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.history-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.history-table td.name {
+  min-width: 140px;
+}
+
+.history-table td.actions {
+  white-space: nowrap;
+  display: flex;
+  gap: 6px;
+}
+
+.history-table tr.dim {
+  opacity: 0.6;
+}
+
+.diff-files {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+}

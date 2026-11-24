@@ -1,0 +1,1 @@
+"""Pure merge algorithms; no IO and no global state."""

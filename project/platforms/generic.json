@@ -1,0 +1,56 @@
+{
+  "aliases": [],
+  "batch": "baseline",
+  "bundle": {
+    "max_file_mb": 50,
+    "max_files": 2000,
+    "max_mb": 100
+  },
+  "description": {
+    "max_chars": 2000,
+    "style": "自由描述"
+  },
+  "evidence_level": "verified",
+  "frontmatter": {
+    "defaults": {
+      "author": "Skill Merge Studio",
+      "version": "1.0.0"
+    },
+    "required": [
+      "name",
+      "description"
+    ]
+  },
+  "group": "通用",
+  "id": "generic",
+  "install": {
+    "global": "",
+    "project": ""
+  },
+  "kind": "skill",
+  "label": "通用目录",
+  "last_verified_at": "2026-11-22",
+  "legacy_limits": null,
+  "name": {
+    "forbidden_parts": [],
+    "max_length": 120,
+    "pattern": "^[^<>:\"/\\\\|?*]+$"
+  },
+  "notes": "通用本地目录，不做平台限制，中文名可用。规则为本地定义，不涉及外部平台。",
+  "origin": "baseline",
+  "package": {
+    "skill_md_path": "SKILL.md",
+    "type": "dir",
+    "wrap": false
+  },
+  "rule_schema_version": 2,
+  "skill_md": {
+    "max_bytes": 10485760,
+    "max_lines": 100000
+  },
+  "source": "local://skillmerge/generic",
+  "source_type": "local_contract",
+  "unknown_fields": [],
+  "verification_status": "verified",
+  "verified_at": "2026-11-22"
+}

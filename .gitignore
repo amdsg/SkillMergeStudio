@@ -1,0 +1,28 @@
+# runtime data, may contain real scanned paths
+project/data/
+project/.backup/
+project/reports/
+project/.codeartsdoer/
+.codeartsdoer/
+codearts_proof/
+readme/
+ppt/
+video/
+site/
+
+# caches / build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# submission packages
+*.zip
+SUBMISSION-CHECKLIST.md
+MANIFEST.txt
+i18n-evidence-report.txt
+
+# secondary backups
+project/platforms/.backup-v1/
+project/docs/

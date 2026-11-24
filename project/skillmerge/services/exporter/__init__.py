@@ -1,0 +1,1 @@
+"""Platform registry loading; rules live only in platforms/*.json."""

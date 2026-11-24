@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill Workbench</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="wb-header">
+      <h1 data-i18n="wb.app.title">Skill Workbench</h1>
+      <button type="button" id="tutorial-button" data-i18n="wb.nav.tutorial" aria-label="Tutorial">Tutorial</button>
+      <select id="locale-switch" aria-label="Language">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
+    </header>
+    <nav class="wb-nav" aria-label="Workbench steps">
+      <button type="button" data-step="search" data-i18n="wb.nav.search"></button>
+      <button type="button" data-step="download" data-i18n="wb.nav.download"></button>
+      <button type="button" data-step="merge" data-i18n="wb.nav.merge"></button>
+      <button type="button" data-step="convert" data-i18n="wb.nav.convert"></button>
+      <button type="button" data-step="config_preview" data-i18n="wb.nav.config"></button>
+      <button type="button" data-step="write" data-i18n="wb.nav.write"></button>
+      <button type="button" data-step="upgrade" data-i18n="wb.nav.upgrade"></button>
+    </nav>
+    <main id="wb-root" class="wb-main"></main>
+    <script type="module" src="views/app.js"></script>
+  </body>
+</html>
