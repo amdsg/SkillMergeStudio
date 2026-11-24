@@ -1,12 +1,18 @@
 const STATES = ["has_update", "up_to_date", "check_failed", "removed", "renamed", "inaccessible", "unknown"];
 
-export function createUpgradePanel(host) {
+export function createUpgradePanel(host, client) {
   const panel = document.createElement("section");
   panel.className = "upgrade-panel";
+  const repo = document.createElement("input");
+  repo.type = "text";
+  repo.dataset.i18nPlaceholder = "wb.convert.search.placeholder";
+  const run = document.createElement("button");
+  run.type = "button";
+  run.dataset.i18n = "wb.button.upgrade";
   const list = document.createElement("div");
   const listId = "wb-upgrade-list";
   list.id = listId;
-  panel.append(list);
+  panel.append(repo, run, list);
   host.append(panel);
 
   function render(items) {
@@ -36,6 +42,16 @@ export function createUpgradePanel(host) {
       list.append(row);
     }
   }
+
+  run.addEventListener("click", async () => {
+    render([{ repo_full_name: repo.value, state: "check_failed", signals: {}, declaration_diff: {} }]);
+    try {
+      const data = await client.upgrade({ repo_full_name: repo.value, local_ref: {} });
+      render([data]);
+    } catch {
+      render([{ repo_full_name: repo.value, state: "check_failed", signals: {}, declaration_diff: {} }]);
+    }
+  });
 
   return { panel, render, states: STATES, listId };
 }

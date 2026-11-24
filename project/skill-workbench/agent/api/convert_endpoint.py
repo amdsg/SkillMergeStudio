@@ -9,10 +9,13 @@ from pathlib import Path
 from agent.adapters.loader import registry
 from agent.api.convert import BINARY_SUFFIXES, MAX_TEXT_BYTES, convert as classify
 from agent.core.hashing import sha256_file
+from agent.core.import_detect import detect
+from agent.core.import_map import build
 from agent.core.index_store import unique_dir
 from agent.core.intermediate import render_header
 from agent.core.paths import data_dir
 from agent.core.records import append
+from agent.core.render import load_template, render
 from agent.http.errors import DomainError
 
 CONVERSIONS = data_dir() / "exports"
@@ -68,8 +71,12 @@ def convert_endpoint(params, body, request_id):
     classification = classify(target, kind, size)
     target_dir = unique_dir(CONVERSIONS, f"{target_id or 'generic'}-{hashlib_id(text)}")
     target_dir.mkdir(parents=True, exist_ok=True)
+    detected = detect(text, str(payload.get("source_profile", "")))
+    doc, _report = build(text, detected["profile_id"], detected["format_recognized"],
+                         source=str(payload.get("source", "unknown")))
+    template = load_template(_template_id(target))
+    body_text = render(doc, template)
     head = render_header(target, classification["tier"], requested_raw)
-    body_text = text if "\n" in text else text + "\n"
     output = head + "\n" + body_text
     files = []
     if kind == "skill":
@@ -104,6 +111,10 @@ def convert_endpoint(params, body, request_id):
         "lost_chapters": lost,
         "text_bytes": size,
     }
+
+
+def _template_id(target: dict) -> str:
+    return "claude" if target.get("id") == "claude" else "generic"
 
 
 def hashlib_id(text: str) -> str:

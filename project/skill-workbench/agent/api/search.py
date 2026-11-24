@@ -1,12 +1,11 @@
-"""Deterministic search over fixture repository metadata.
-
-Real GitHub calls are intentionally not performed here: use fixtures for automated
-evidence and treat live network results as manual evidence.
-"""
+"""Search over skill repositories: fixture by default, live GitHub when enabled."""
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
+
+from agent.net.live import get_client, is_live
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = ROOT / "tests_wb" / "fixtures" / "search" / "repos.json"
@@ -43,6 +42,12 @@ def search(payload: dict) -> dict:
     query = str(payload.get("query", "")).strip()
     sort = str(payload.get("sort", "relevance"))
     page = int(payload.get("page", 1) or 1)
+    if is_live():
+        return _search_github(query, sort, page, get_client())
+    return _search_fixture(query, sort, page)
+
+
+def _search_fixture(query: str, sort: str, page: int) -> dict:
     items = [item for item in _load_items() if _query_matches(item, query)]
     if sort == "stars":
         items.sort(key=lambda item: int(item.get("stars") or 0), reverse=True)
@@ -78,6 +83,41 @@ def search(payload: dict) -> dict:
         "page": page,
         "quota": {"remaining": None, "reset_at": None, "source": "fixture"},
         "cache": {"hit": False, "ttl_seconds": 300},
+    }
+
+
+def _search_github(query: str, sort: str, page: int, client) -> dict:
+    params = {"q": query or "skill", "per_page": "10", "page": str(page)}
+    gh_sort = {"stars": "stars", "updated": "updated"}.get(sort)
+    if gh_sort:
+        params["sort"] = gh_sort
+    result = client.request("GET", "/search/repositories", params)
+    raw_items = (result.get("data") or {}).get("items") or []
+    meta = result.get("meta") or {}
+    return {
+        "items": [_map_github_item(item) for item in raw_items],
+        "page": page,
+        "quota": {"remaining": meta.get("remaining"), "reset_at": meta.get("reset_at"), "source": "github"},
+        "cache": {"hit": False, "ttl_seconds": 300},
+    }
+
+
+def _map_github_item(item: dict) -> dict:
+    return {
+        "full_name": item.get("full_name"),
+        "description": item.get("description"),
+        "stars": item.get("stargazers_count"),
+        "pushed_at": item.get("pushed_at"),
+        "release_tag": "unknown",
+        "release_download": "unknown",
+        "commit_sha": "unknown",
+        "topics": item.get("topics") or [],
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "factors": {},
+        "factor_weights_version": FACTOR_WEIGHTS_VERSION,
+        "missing_factors": ["release_tag", "release_download", "commit_sha"],
+        "applicability": {"mode": "unknown", "targets": [], "reason_code": "not_fetched"},
+        "source": "github",
     }
 
 def search_endpoint(params, body, request_id):

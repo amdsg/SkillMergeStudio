@@ -4,7 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agent.config.defaults import CAPABILITIES, RISK_ACK_VERSION
+from agent.config.defaults import RISK_ACK_VERSION
+from agent.config.runtime import snapshot
 
 ROOT = Path(__file__).resolve().parents[2]
 INHERITANCE = ROOT / "agent/store/records/inheritance.json"
@@ -42,16 +43,7 @@ def health(params, body, request_id):
     inheritance = _inheritance()
     return {
         "api_version": "wb-1",
-        "capabilities": [
-            {
-                "capability_id": capability_id,
-                "default_value": value,
-                "enabled": value,
-                "enabled_at": None,
-                "enabled_by": None,
-            }
-            for capability_id, value in CAPABILITIES.items()
-        ],
+        "capabilities": snapshot(),
         "risk_ack_version": RISK_ACK_VERSION,
         "evidence": {"targets": _target_counts()},
         "engine": {"state": "missing"},

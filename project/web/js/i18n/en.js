@@ -1,7 +1,7 @@
 export const en = {
   "app.title": "Skill Merge Studio",
   "app.subtitle": "Scan · Classify · Merge · Export",
-  "app.langZh": "中文",
+  "app.langZh": "Chinese",
   "app.langEn": "English",
 
   "step.label": "Workflow steps",

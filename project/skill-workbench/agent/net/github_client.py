@@ -7,6 +7,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from typing import NoReturn
 
 from agent.http.errors import DomainError
 
@@ -80,20 +81,7 @@ class GithubClient:
                 raise DomainError("E_GITHUB_UPSTREAM", "wb.error.github_upstream",
                                   params={"status": status}, fix_key="wb.fix.retry_later") from error
             return {"ok": True, "data": data, "meta": meta, "endpoint": endpoint.get("id")}
-        if status == 401:
-            raise DomainError("E_GITHUB_AUTH_INVALID", "wb.error.github_auth_invalid",
-                              params=meta, fix_key="wb.fix.check_token")
-        if status in (403, 429) and meta.get("remaining") == "0":
-            raise DomainError("E_GITHUB_RATE_LIMIT", "wb.error.github_rate_limit",
-                              params=meta, fix_key="wb.fix.retry_later")
-        if status == 403:
-            raise DomainError("E_GITHUB_FORBIDDEN", "wb.error.github_forbidden",
-                              params=meta, fix_key="wb.fix.check_token")
-        if status >= 500:
-            raise DomainError("E_GITHUB_UPSTREAM", "wb.error.github_upstream",
-                              params={"status": status}, fix_key="wb.fix.retry_later")
-        raise DomainError("E_GITHUB_UPSTREAM", "wb.error.github_upstream",
-                          params={"status": status}, fix_key="wb.fix.retry_later")
+        self._raise_for_status(status, response_headers)
 
     def _meta(self, status: int, headers: dict) -> dict:
         remaining = headers.get("x-ratelimit-remaining", "unknown")
@@ -106,3 +94,36 @@ class GithubClient:
             "retry_after_seconds": int(retry_after) if str(retry_after).isdigit() else "unknown",
             "mode": self.mode,
         }
+
+    def _raise_for_status(self, status: int, headers: dict) -> NoReturn:
+        meta = self._meta(status, headers)
+        if status == 401:
+            raise DomainError("E_GITHUB_AUTH_INVALID", "wb.error.github_auth_invalid",
+                              params=meta, fix_key="wb.fix.check_token")
+        if status in (403, 429) and meta.get("remaining") == "0":
+            raise DomainError("E_GITHUB_RATE_LIMIT", "wb.error.github_rate_limit",
+                              params=meta, fix_key="wb.fix.retry_later")
+        if status == 403:
+            raise DomainError("E_GITHUB_FORBIDDEN", "wb.error.github_forbidden",
+                              params=meta, fix_key="wb.fix.check_token")
+        if status == 404:
+            raise DomainError("E_GITHUB_NOT_FOUND", "wb.error.github_not_found",
+                              params=meta, fix_key="wb.fix.check_repo")
+        raise DomainError("E_GITHUB_UPSTREAM", "wb.error.github_upstream",
+                          params={"status": status}, fix_key="wb.fix.retry_later")
+
+    def download(self, path: str, params: dict | None = None) -> bytes:
+        endpoint = match_endpoint("GET", path)
+        if endpoint is None:
+            raise DomainError("E_GITHUB_ENDPOINT_DENIED", "wb.error.github_endpoint_denied",
+                              params={"path": path}, fix_key="wb.fix.use_read_only")
+        query = f"?{urllib.parse.urlencode(params)}" if params else ""
+        url = f"{self._base}{path}{query}"
+        headers = {"Accept": "application/vnd.github+json", "User-Agent": USER_AGENT}
+        if self._token:
+            headers["Authorization"] = f"Bearer {self._token}"
+        self.calls += 1
+        status, response_headers, body = self._transport("GET", url, headers)
+        if status in (200, 201):
+            return body
+        self._raise_for_status(status, response_headers)

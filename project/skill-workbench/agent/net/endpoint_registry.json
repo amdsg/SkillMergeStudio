@@ -7,6 +7,7 @@
     {"id": "repo_contents", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/contents(/.*)?$", "purpose": "contents"},
     {"id": "repo_commits", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/commits$", "purpose": "commits"},
     {"id": "repo_readme", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/readme$", "purpose": "readme"},
+    {"id": "repo_zipball", "method": "GET", "pattern": "^/repos/[^/]+/[^/]+/zipball(/.*)?$", "purpose": "archive"},
     {"id": "rate_limit", "method": "GET", "pattern": "^/rate_limit$", "purpose": "quota"}
   ]
 }

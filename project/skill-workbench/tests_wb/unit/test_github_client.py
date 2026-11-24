@@ -22,9 +22,9 @@ def make_client(status=200, headers=None, body=b'{"items":[]}'):
     return client, calls
 
 
-def test_endpoint_whitelist_has_seven_and_ledger_is_read_only():
+def test_endpoint_whitelist_is_read_only():
     endpoints = load_endpoints()
-    assert len(endpoints) == 7
+    assert len(endpoints) == 8
     assert all(endpoint["method"] in ("GET", "HEAD") for endpoint in endpoints)
 
 

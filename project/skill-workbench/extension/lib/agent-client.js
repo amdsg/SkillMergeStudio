@@ -30,11 +30,15 @@ export function createAgentClient(base = DEFAULT_AGENT, token = "") {
   }
   return {
     health: () => request("GET", "/health"),
+    targets: () => request("GET", "/targets"),
     search: (payload) => request("POST", "/search", payload),
     download: (payload) => request("POST", "/download", payload),
     preview: (payload) => request("POST", "/install/preview", payload),
+    applyInstall: (payload) => request("POST", "/install/apply", payload),
     convert: (payload) => request("POST", "/convert", payload),
     merge: (payload) => request("POST", "/merge", payload),
     upgrade: (payload) => request("POST", "/upgrade/check", payload),
+    settings: () => request("GET", "/settings"),
+    enableCapability: (id, payload) => request("POST", `/settings/capabilities/${id}`, payload),
   };
 }

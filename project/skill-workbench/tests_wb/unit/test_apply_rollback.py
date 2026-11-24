@@ -9,7 +9,6 @@ if str(WB) not in sys.path:
     sys.path.insert(0, str(WB))
 
 from agent.api import install_apply  # noqa: E402
-from agent.config.defaults import CAPABILITIES  # noqa: E402
 from agent.core import atomic_write, rollback  # noqa: E402
 from agent.http.errors import DomainError  # noqa: E402
 
@@ -24,14 +23,14 @@ def payload(sandbox: Path, files: list[dict], plan_hash="plan-1") -> bytes:
 
 
 def enable(monkeypatch, tmp_path):
-    monkeypatch.setitem(CAPABILITIES, "real_write", True)
+    monkeypatch.setattr(install_apply, "is_enabled", lambda capability_id: True)
     monkeypatch.setattr(install_apply, "SANDBOX", tmp_path / "sandbox")
     monkeypatch.setattr(install_apply, "BACKUPS", tmp_path / "backups")
     (tmp_path / "sandbox").mkdir(parents=True, exist_ok=True)
 
 
 def test_capability_off_returns_403(monkeypatch, tmp_path):
-    monkeypatch.setitem(CAPABILITIES, "real_write", False)
+    monkeypatch.setattr(install_apply, "is_enabled", lambda capability_id: False)
     with pytest.raises(DomainError) as error:
         install_apply.apply_endpoint({}, payload(tmp_path / "sandbox", [{"path": "a.md", "content": "x"}]), "")
     assert error.value.code == "E_CAPABILITY_DISABLED"

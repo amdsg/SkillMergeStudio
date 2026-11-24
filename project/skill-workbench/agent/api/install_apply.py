@@ -4,7 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agent.config.defaults import CAPABILITIES, RISK_ACK_VERSION
+from agent.config.defaults import RISK_ACK_VERSION
+from agent.config.runtime import is_enabled
 from agent.core import atomic_write, backup, rollback
 from agent.core.hashing import sha256_text
 from agent.core.paths import data_dir
@@ -27,7 +28,7 @@ def confirm_token(plan_hash: str) -> str:
 
 
 def _validate(payload: dict) -> tuple[Path, list[dict], str]:
-    if not CAPABILITIES.get("real_write", False):
+    if not is_enabled("real_write"):
         raise DomainError("E_CAPABILITY_DISABLED", "wb.error.capability_disabled", status=403,
                           params={"capability": "real_write"}, fix_key="wb.fix.enable_capability")
     target = Path(str(payload.get("target_path", ""))).resolve()

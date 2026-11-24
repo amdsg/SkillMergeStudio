@@ -107,7 +107,7 @@ def test_download_preview_convert_merge_upgrade(server):
         "source_kind": "skill",
     })["data"]
     assert converted["tier"] == "generic"
-    assert converted["lost_chapters"] == []
+    assert "## Limits" in converted["lost_chapters"]
     assert "target not verified" in converted["head"]
 
     generic = call(server, "POST", "/convert", {

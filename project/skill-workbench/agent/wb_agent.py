@@ -24,6 +24,7 @@ from agent.api.merge import preview_endpoint as merge_preview
 from agent.api.pair import confirm_code, create_code, pair_status
 from agent.api.records import list_records
 from agent.api.search import search_endpoint
+from agent.api.settings import enable_capability, get_settings
 from agent.api.targets import list_targets, target_tools
 from agent.api.upgrade import check_endpoint
 from agent.core.paths import ensure_store
@@ -49,6 +50,8 @@ def build_router() -> Router:
     router.add("POST", "/import", import_endpoint)
     router.add("POST", "/merge", merge_preview)
     router.add("POST", "/upgrade/check", check_endpoint)
+    router.add("GET", "/settings", get_settings)
+    router.add("POST", "/settings/capabilities/{id}", enable_capability)
     router.add("GET", "/records/{name}", list_records)
     router.add("GET", "/diagnostics/{id}", get_diagnostics)
     return router

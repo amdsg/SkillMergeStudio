@@ -1,6 +1,9 @@
-export function createConfigPreview(host) {
+export function createConfigPreview(host, client) {
   const panel = document.createElement("section");
   panel.className = "config-preview";
+  const files = document.createElement("input");
+  files.type = "text";
+  files.dataset.i18nPlaceholder = "wb.convert.search.placeholder";
   const applicability = document.createElement("p");
   applicability.dataset.role = "applicability";
   const tool = document.createElement("p");
@@ -17,13 +20,8 @@ export function createConfigPreview(host) {
   const generate = document.createElement("button");
   generate.type = "button";
   generate.dataset.i18n = "wb.button.preview";
-  generate.disabled = true;
-  panel.append(applicability, tool, warning, ack, ackLabel, generate);
+  panel.append(files, applicability, tool, warning, ack, ackLabel, generate);
   host.append(panel);
-
-  ack.addEventListener("change", () => {
-    generate.disabled = !ack.checked;
-  });
 
   function update(plan) {
     applicability.textContent = plan.applicability_label || "";
@@ -32,11 +30,18 @@ export function createConfigPreview(host) {
     warning.hidden = !mismatch;
     if (mismatch) {
       warning.dataset.i18n = "wb.error.applicability_ack_required";
-      warning.dataset.ackId = mismatch.ack_id;
-      ack.checked = false;
-      generate.disabled = true;
     }
   }
+
+  generate.addEventListener("click", async () => {
+    try {
+      const names = files.value.split(",").map((s) => s.trim()).filter(Boolean);
+      const plan = await client.preview({ files: names, target_tool: "claude_code", target_path: "" });
+      update(plan);
+    } catch (error) {
+      applicability.textContent = error.code || "E_INTERNAL";
+    }
+  });
 
   return { panel, update };
 }
