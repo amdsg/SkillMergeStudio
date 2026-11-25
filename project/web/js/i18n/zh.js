@@ -278,5 +278,24 @@ export const zh = {
   "export.error": "错误",
   "export.itemsMismatch": "结果条目 {items} / 平台数 {total}",
   "history.filterPlatform": "平台筛选",
-  "history.allPlatforms": "全部平台"
+  "history.allPlatforms": "全部平台",
+
+  "github.button": "GitHub 下载",
+  "github.title": "GitHub Skill 下载",
+  "github.trending": "热门推荐",
+  "github.search": "搜索",
+  "github.week": "本周",
+  "github.month": "本月",
+  "github.searchPlaceholder": "搜索项目名（如 agent skill）",
+  "github.empty": "没有找到结果",
+  "github.download": "下载",
+  "github.downloaded": "已下载",
+  "github.downloadDone": "已下载到 {dir}（{files} 个文件）",
+  "github.quota": "GitHub 限额剩余 {remaining}",
+
+  "aria.platformList": "平台列表",
+  "aria.mergeName": "产物名称",
+  "aria.filter": "筛选",
+  "aria.detail": "技能详情",
+  "aria.previewTabs": "预览标签"
 };

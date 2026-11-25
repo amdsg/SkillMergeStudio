@@ -1,5 +1,6 @@
 import { createPlatformPicker } from "/js/views/platform-picker.js";
 import { createCandidatePool } from "/js/views/candidate-pool.js";
+import { createGithub } from "/js/views/github.js";
 import { createSkillList } from "/js/views/skill-list.js";
 import { detailHtml } from "/js/views/detail.js";
 import { createHistory } from "/js/views/history.js";
@@ -88,7 +89,14 @@ const el = {
   settingsStatus: document.getElementById("settings-status"),
   settingsClose: document.getElementById("settings-close"),
   settingsSave: document.getElementById("settings-save"),
-  settingsTest: document.getElementById("settings-test")
+  settingsTest: document.getElementById("settings-test"),
+  githubButton: document.getElementById("github-button"),
+  githubModal: document.getElementById("github-modal"),
+  githubClose: document.getElementById("github-close"),
+  githubStatus: document.getElementById("github-status"),
+  githubResults: document.getElementById("github-results"),
+  githubQuery: document.getElementById("github-query"),
+  githubSearchBtn: document.getElementById("github-search-btn")
 };
 
 async function api(path, options = {}) {
@@ -504,6 +512,20 @@ const settingsPanel = createSettings({
   }
 });
 
+const githubPanel = createGithub({
+  modal: el.githubModal,
+  closeButton: el.githubClose,
+  request: api,
+  statusEl: el.githubStatus,
+  resultsEl: el.githubResults,
+  queryInput: el.githubQuery,
+  searchBtn: el.githubSearchBtn,
+  modeButtons: Array.from(document.querySelectorAll(".github-modes [data-mode]")),
+  windowButtons: Array.from(document.querySelectorAll(".github-window-row [data-window]")),
+  searchRow: document.querySelector(".github-search-row"),
+  windowRow: document.querySelector(".github-window-row")
+});
+
 function markQuick(active) {
   markQuickButtons(document, active);
 }
@@ -553,6 +575,7 @@ el.cancelButton.addEventListener("click", cancelCurrent);
 el.classifyButton.addEventListener("click", classify);
 el.historyButton.addEventListener("click", () => historyPanel.open());
 el.settingsButton.addEventListener("click", () => settingsPanel.open());
+el.githubButton.addEventListener("click", () => githubPanel.open());
 document.querySelectorAll("[data-quick]").forEach((button) => {
   button.addEventListener("click", () => applyQuick(button.dataset.quick));
 });
@@ -589,6 +612,7 @@ document.addEventListener("keydown", (event) => {
     if (!el.modal.classList.contains("hidden")) hideModal(el.modal);
     historyPanel.close();
     settingsPanel.close();
+    githubPanel.close();
     state.selectedId = "";
     skillList.setSelected("");
     renderList();

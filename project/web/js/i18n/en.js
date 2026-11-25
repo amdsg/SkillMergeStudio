@@ -278,5 +278,24 @@ export const en = {
   "export.error": "Error",
   "export.itemsMismatch": "Result items {items} / platforms {total}",
   "history.filterPlatform": "Platform filter",
-  "history.allPlatforms": "All platforms"
+  "history.allPlatforms": "All platforms",
+
+  "github.button": "GitHub",
+  "github.title": "GitHub Skill Download",
+  "github.trending": "Trending",
+  "github.search": "Search",
+  "github.week": "This week",
+  "github.month": "This month",
+  "github.searchPlaceholder": "Search repo name (e.g. agent skill)",
+  "github.empty": "No results found",
+  "github.download": "Download",
+  "github.downloaded": "Downloaded",
+  "github.downloadDone": "Downloaded to {dir} ({files} files)",
+  "github.quota": "GitHub quota remaining: {remaining}",
+
+  "aria.platformList": "Platform list",
+  "aria.mergeName": "Artifact name",
+  "aria.filter": "Filters",
+  "aria.detail": "Skill detail",
+  "aria.previewTabs": "Preview tabs"
 };

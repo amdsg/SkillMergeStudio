@@ -11,8 +11,9 @@ from typing import Any, Optional
 
 from . import __version__
 from .api import health as health_api
-from .api import artifacts_api, export_api, jobs_api, ops_api, skills_api, tasks_api
+from .api import artifacts_api, export_api, github_api, jobs_api, ops_api, skills_api, tasks_api
 from .config import paths
+from .services.github import GithubClient
 from .config.loader import load_config
 from .http.router import Router
 from .http.server import create_server
@@ -59,6 +60,7 @@ class AppContext:
     port: int = 0
     server: Any = None
     web_dir: str = ""
+    github_client: Any = None
 
 
 def _pid_alive(pid: int) -> bool:
@@ -169,6 +171,10 @@ def build_router(ctx: AppContext) -> Router:
     router.add("GET", "/api/skills/{id}", skills_api.get_skill)
     router.add("GET", "/api/categories", skills_api.categories)
     router.add("GET", "/api/duplicates", skills_api.duplicates)
+    router.add("GET", "/api/github/health", github_api.health)
+    router.add("POST", "/api/github/search", github_api.search)
+    router.add("POST", "/api/github/trending", github_api.trending)
+    router.add("POST", "/api/github/download", github_api.download)
     return router
 
 
@@ -284,6 +290,8 @@ def _make_context(directory: str, config, db: Database) -> AppContext:
     job_store = JobStore(jobs_repo)
     jobs = JobQueue(jobs_repo, job_store, events)
     job_store.recover_startup()
+    github_token = os.environ.get("SKILLMERGE_GITHUB_TOKEN", "") or os.environ.get("GITHUB_TOKEN", "")
+    github_client = GithubClient(token=github_token)
     ctx = AppContext(
         config=config,
         data_dir=directory,
@@ -303,6 +311,7 @@ def _make_context(directory: str, config, db: Database) -> AppContext:
         artifacts_repo=artifacts_repo,
         started_at=time.monotonic(),
         web_dir=paths.web_dir(),
+        github_client=github_client,
     )
     ctx.router = build_router(ctx)
     _register_scan(ctx)

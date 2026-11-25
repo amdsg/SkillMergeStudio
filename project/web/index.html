@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/css/m1m4.css">
   <link rel="stylesheet" href="/css/progress.css">
   <link rel="stylesheet" href="/css/export-batch.css">
+  <link rel="stylesheet" href="/css/github.css">
 </head>
 <body>
   <header class="topbar">
@@ -24,8 +25,8 @@
     </div>
     <div class="topbar-actions">
       <select id="lang-select" aria-label="Language">
-        <option value="zh">中文</option>
-        <option value="en">English</option>
+        <option value="zh" data-i18n="app.langZh">中文</option>
+        <option value="en" data-i18n="app.langEn">English</option>
       </select>
       <button id="settings-button" class="secondary" type="button" data-i18n="toolbar.settings">设置</button>
     </div>
@@ -54,6 +55,7 @@
         <button id="scan-button" class="primary" type="button" data-i18n="toolbar.scan">扫描常见目录</button>
         <button id="refresh-button" class="secondary" type="button" data-i18n="toolbar.refresh">刷新列表</button>
         <button id="history-button" class="secondary" type="button" data-i18n="toolbar.history">产物历史</button>
+        <button id="github-button" class="secondary" type="button" data-i18n="github.button">GitHub 下载</button>
         <input id="search" type="search" data-i18n-placeholder="toolbar.search" data-i18n="search.aria" data-i18n-attr="aria-label" aria-label="搜索技能">
       </div>
 
@@ -63,14 +65,14 @@
           <input id="platform-input" type="text" role="combobox" aria-labelledby="platform-label"
                  aria-autocomplete="list" aria-expanded="false" aria-controls="platform-listbox"
                  autocomplete="off" data-i18n-placeholder="toolbar.platformSearch" data-i18n="toolbar.platformSearch" data-i18n-attr="placeholder">
-          <div id="platform-listbox" role="listbox" class="platform-listbox" aria-label="平台列表"></div>
+          <div id="platform-listbox" role="listbox" class="platform-listbox" aria-label="平台列表" data-i18n="aria.platformList" data-i18n-attr="aria-label"></div>
           <select id="platform-select" class="platform-hidden-select" aria-hidden="true" tabindex="-1"></select>
         </div>
         <label for="merge-name" data-i18n="toolbar.name">产物名称</label>
-        <input id="merge-name" value="merged-skill" maxlength="120" aria-label="产物名称">
+        <input id="merge-name" value="merged-skill" maxlength="120" aria-label="产物名称" data-i18n="aria.mergeName" data-i18n-attr="aria-label">
       </div>
 
-      <div id="filter-bar" class="filter-bar" role="group" aria-label="筛选">
+      <div id="filter-bar" class="filter-bar" role="group" aria-label="筛选" data-i18n="aria.filter" data-i18n-attr="aria-label">
         <label for="filter-platform" data-i18n="filter.platform">来源平台</label>
         <select id="filter-platform"></select>
         <label for="filter-size" data-i18n="filter.size">体积</label>
@@ -107,7 +109,7 @@
       <div id="list" class="list" aria-live="polite"></div>
     </section>
 
-    <aside id="detail" class="detail" aria-label="技能详情">
+    <aside id="detail" class="detail" aria-label="技能详情" data-i18n="aria.detail" data-i18n-attr="aria-label">
       <h2 data-i18n="sidebar.title">详情</h2>
       <p class="muted" data-i18n="detail.empty">选择左侧技能查看详情</p>
     </aside>
@@ -128,7 +130,7 @@
         <h2 id="preview-title" data-i18n="preview.title">合并预览</h2>
         <button id="close-modal" class="secondary" type="button" data-i18n="preview.close">关闭</button>
       </header>
-      <div class="tabs" role="tablist" aria-label="预览标签">
+      <div class="tabs" role="tablist" aria-label="预览标签" data-i18n="aria.previewTabs" data-i18n-attr="aria-label">
         <button type="button" class="tab active" data-tab="chapters" role="tab" data-i18n="preview.chapters">章节</button>
         <button type="button" class="tab" data-tab="conflicts" role="tab" data-i18n="preview.conflicts">冲突</button>
         <button type="button" class="tab" data-tab="diff" role="tab" data-i18n="preview.diff">差异</button>
@@ -197,6 +199,31 @@
         <select id="history-platform"></select>
       </div>
       <div id="history-body" class="history-body"></div>
+    </div>
+  </div>
+
+  <div id="github-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="github-title">
+    <div class="modal-card github-card">
+      <header class="modal-header">
+        <h2 id="github-title" data-i18n="github.title">GitHub Skill 下载</h2>
+        <button id="github-close" class="secondary" type="button" data-i18n="preview.close">关闭</button>
+      </header>
+      <div class="github-toolbar">
+        <div class="github-modes">
+          <button class="tab active" data-mode="trending" type="button" data-i18n="github.trending">热门推荐</button>
+          <button class="tab" data-mode="search" type="button" data-i18n="github.search">搜索</button>
+        </div>
+        <div class="github-window-row">
+          <button class="secondary active" data-window="week" type="button" data-i18n="github.week">本周</button>
+          <button class="secondary" data-window="month" type="button" data-i18n="github.month">本月</button>
+        </div>
+        <div class="github-search-row hidden">
+          <input id="github-query" type="search" data-i18n-placeholder="github.searchPlaceholder" placeholder="搜索项目名">
+          <button id="github-search-btn" class="primary" type="button" data-i18n="github.search">搜索</button>
+        </div>
+      </div>
+      <div id="github-status" class="github-status" role="status"></div>
+      <div id="github-results" class="github-results"></div>
     </div>
   </div>
 

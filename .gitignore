@@ -3,6 +3,8 @@ project/data/
 project/.backup/
 project/reports/
 project/.codeartsdoer/
+project/skill-workbench/data/
+project/skill-workbench/agent/store/records/
 .codeartsdoer/
 codearts_proof/
 readme/
