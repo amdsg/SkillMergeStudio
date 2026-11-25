@@ -115,6 +115,26 @@
   color: var(--accent-strong);
 }
 
+.github-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.github-update-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.github-update-badge.hidden {
+  display: none;
+}
+
 .github-download {
   white-space: nowrap;
 }

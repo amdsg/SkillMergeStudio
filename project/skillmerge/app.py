@@ -175,6 +175,7 @@ def build_router(ctx: AppContext) -> Router:
     router.add("POST", "/api/github/search", github_api.search)
     router.add("POST", "/api/github/trending", github_api.trending)
     router.add("POST", "/api/github/download", github_api.download)
+    router.add("POST", "/api/github/check-update", github_api.check_update)
     return router
 
 

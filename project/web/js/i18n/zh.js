@@ -292,6 +292,8 @@ export const zh = {
   "github.downloaded": "已下载",
   "github.downloadDone": "已下载到 {dir}（{files} 个文件）",
   "github.quota": "GitHub 限额剩余 {remaining}",
+  "github.hasUpdate": "有更新",
+  "github.update": "更新",
 
   "aria.platformList": "平台列表",
   "aria.mergeName": "产物名称",

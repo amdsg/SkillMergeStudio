@@ -292,6 +292,8 @@ export const en = {
   "github.downloaded": "Downloaded",
   "github.downloadDone": "Downloaded to {dir} ({files} files)",
   "github.quota": "GitHub quota remaining: {remaining}",
+  "github.hasUpdate": "Update available",
+  "github.update": "Update",
 
   "aria.platformList": "Platform list",
   "aria.mergeName": "Artifact name",
