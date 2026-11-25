@@ -4,7 +4,8 @@ Skill Merge Studio
 把散落在电脑各处的 Agent Skill 找出来、建立索引、自动分类、按策略安全合并，
 再按目标平台或聊天模型导出，并保留可撤销、可重建的产物历史。当前进度：
 M0（扫描与索引）+ M2（选择与合并）+ M3（导出与平台）+ M3b（平台治理）+
-M1（分类体系）+ M4（历史/撤销/重建）+ M5（打磨与收口）。运行时不依赖任何
+M1（分类体系）+ M4（历史/撤销/重建）+ M5（打磨与收口）。另内置 GitHub 只读客户端：
+按项目名搜索、本周/本月热门推荐、zipball 下载与更新检测（手动触发）。运行时不依赖任何
 第三方 Python 包；前端无框架与构建链。
 
 一、安装
@@ -83,6 +84,11 @@ data/port.txt / pid.txt   运行期文件
 2. 点击“导出”；成功后可看到产物路径或“下载 zip”。
 3. prompt-only 平台会生成 prompt.md、manifest.json、README.txt。
 
+GitHub 搜索 / 下载：
+1. 点击顶部“GitHub 下载”，选择“热门推荐”（本周/本月）或“搜索”。
+2. 下载 zipball 解压到 data/downloads/<sha 前缀>，阻断路径穿越并识别 SKILL.md。
+3. 重新扫描该目录即可入索引；再次打开弹窗时检查更新（手动触发）。
+
 API：
    POST /api/scan           {"roots":["D:\\skills"],"depth":10}
    POST /api/classify       {"use_ai":false}（人工分类不会被覆盖）
@@ -104,6 +110,11 @@ API：
    POST /api/artifacts/{id}/ai-apply 应用已确认的 AI 建议（仅确认的 key）
    GET  /api/skills/{id}/artifacts   引用该技能的产物
    GET  /api/artifacts/{id}/download
+   GET  /api/github/health  GitHub 客户端状态
+   POST /api/github/search  {"query":"skill","sort":"relevance","page":1}
+   POST /api/github/trending {"window":"week"|"month","page":1}
+   POST /api/github/download {"repo_full_name":"owner/repo","ref":""}
+   POST /api/github/check-update {"repo_full_name":"owner/repo","local_ref":{...}}
 
 合并规则：
 - 默认 keep-all，只删除空白归一化后完全相同的段落。

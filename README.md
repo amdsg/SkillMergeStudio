@@ -5,6 +5,8 @@
 
 本地优先：服务只监听 `127.0.0.1`；运行时不依赖任何第三方 Python 包（标准库 + SQLite + 原生 ESM 前端）。
 
+内置 GitHub 只读客户端：按项目名搜索、查看本周 / 本月最热推荐，一键下载 zipball 并安全解压；下载后记录远端基准，再次打开弹窗时手动检查更新。
+
 ![选择与合并](docs/images/02b-selected.png)
 
 ## 实测能力
@@ -21,8 +23,16 @@
 | 历史 / 撤销 / 重建 | 撤销把文件移入 `.trash` 并做哈希校验；修改源文件后重建，输出章节级 diff |
 | 安全默认 | 无会话令牌访问 API 返回 401；Host / Origin / CSRF 校验；CSP 限制内联脚本 |
 
-自动化测试：`294 passed / 3 failed / 3 skipped / 3 deselected`。
+自动化测试（2026-11-25 在当前源码上复跑）：`305 passed / 3 failed / 3 skipped / 3 deselected`。
 3 个失败均为需求追踪测试里硬编码的旧条数（需求 spec 已从 341 条增至 361 条），不涉及运行功能。
+
+## GitHub 搜索与下载
+
+- 搜索：`POST /api/github/search`，按项目名 / 描述 / topic 查询仓库。
+- 推荐：`POST /api/github/trending`，本周 / 本月创建的 Skill 仓库按 stars 降序。
+- 下载：`POST /api/github/download`，zipball 解压到 `data/downloads/<sha 前缀>`，阻断绝对路径与 `..` 穿越，并识别 `SKILL.md`。
+- 检查更新：`POST /api/github/check-update`，对比远端 commit / release / pushed_at，仅在打开下载弹窗时手动触发。
+- 边界：下载目录需要重新扫描才会进入索引；不会在后台自动更新已索引的 Skill。
 
 ## 快速开始
 
@@ -94,6 +104,8 @@ project/
 
 ## 已知限制
 
+- GitHub 搜索 / 下载 / 检查更新需要能访问 `api.github.com`；仓库内单元测试使用 mock transport，真实网络与限流未做端到端验收。
+- 从 GitHub 下载的仓库需要重新扫描入索引；工具不会后台自动更新已索引的 Skill。
 - `install` 模式只有单元测试覆盖"不覆盖已有文件"，未在真实平台目录实测。
 - AI 分类 / 语义复核默认关闭，需要自备 OpenAI 兼容端点；密钥不落盘。
 - 平台规则中多数为候选证据等级（启发式），只有 Claude 规则经过官方文档核验。
